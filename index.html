@@ -169,6 +169,23 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     transition: border-color 0.2s, background 0.2s;
   }
   .feature-pill + .feature-pill { margin-top: 0.75rem; }
+
+  .video-wrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(200,184,154,0.12);
+    margin-bottom: 1.5rem;
+  }
+  .video-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
   .fp-title a { color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(200,184,154,0.25); transition: border-color 0.2s, color 0.2s; }
   .fp-title a:hover { color: var(--warm); border-color: var(--warm); }
 
@@ -357,12 +374,19 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   .booking-note { margin-top: 1.25rem; font-size: 13px; color: var(--muted); }
   .booking-note a { color: var(--warm); text-decoration: none; }
   .booking-note a:hover { text-decoration: underline; }
+  .instagram-nudge { margin-top: 0.75rem; font-size: 13px; color: var(--muted); }
+  .instagram-nudge a { color: var(--warm); text-decoration: none; font-weight: 500; }
+  .instagram-nudge a:hover { text-decoration: underline; }
 
   /* ── FOOTER ── */
   footer { border-top: 1px solid rgba(200,184,154,0.1); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-family: var(--serif); font-size: 1rem; color: var(--muted); }
   .footer-logo em { color: var(--accent); }
   .footer-copy { font-size: 12px; color: rgba(138,130,120,0.5); }
+  .footer-right { display: flex; align-items: center; gap: 1rem; }
+  .instagram-link { display: flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; transition: color 0.2s; }
+  .instagram-link:hover { color: var(--warm); }
+  .instagram-link svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 
   /* ── ANIMATIONS ── */
   .fade-up { opacity: 0; transform: translateY(24px); animation: fadeUp 0.7s ease forwards; }
@@ -471,6 +495,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     <a href="https://calendar.app.google/8o8ckbia8TZ4Js6N8" target="_blank" class="btn-primary fade-up delay-3">
       Book your trial lesson <span class="btn-arrow">→</span>
     </a>
+    <p class="instagram-nudge fade-up delay-4">Want to see me play first? <a href="https://www.instagram.com/leonguitar_" target="_blank">Follow @leonguitar_ on Instagram →</a></p>
     <!-- Mobile stats -->
     <div class="hero-stats-mobile fade-up delay-4">
       <div><div class="stat-val">4.8★</div><div class="stat-label">Avg rating</div></div>
@@ -509,6 +534,9 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
       </div>
     </div>
     <div>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube-nocookie.com/embed/wP6FO9FzmWk?rel=0&modestbranding=1" title="Introduction — Nicolás León Guitar" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
       <a href="#curriculum" class="feature-pill">
         <div class="fp-icon">🎯</div>
         <div><div class="fp-title">12-Level Structured Curriculum</div><div class="fp-desc">From your first open chord to advanced lead playing — mapped outcomes at every level so you always know where you're going.</div></div>
@@ -759,13 +787,23 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   <a href="https://calendar.app.google/8o8ckbia8TZ4Js6N8" target="_blank" class="btn-primary">
     Choose your time slot <span class="btn-arrow">→</span>
   </a>
-  <p class="booking-note">Questions? Email <a href="mailto:nicoleonlo@gmail.com">nicoleonlo@gmail.com</a></p>
+  <p class="booking-note">Questions? Email <a href="mailto:nico.leonlope@gmail.com">nico.leonlope@gmail.com</a></p>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">León <em>Guitar</em></div>
   <div class="footer-copy">© 2026 Nicolás León · Online guitar lessons</div>
+  <div class="footer-right">
+    <a href="https://www.instagram.com/leonguitar_" target="_blank" class="instagram-link">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+      </svg>
+      @leonguitar_
+    </a>
+  </div>
 </footer>
 
 </body>
