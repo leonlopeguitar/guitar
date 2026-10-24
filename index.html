@@ -672,9 +672,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
       grid-template-columns: 1fr;
       gap: 2rem;
     }
-    /* Photo comes second on mobile (text is first in HTML) */
     .hero-photo-wrap {
-      order: 2;
       aspect-ratio: 3/2;
       max-height: 260px;
       border-radius: 12px;
@@ -732,7 +730,8 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div style="order:1">
+    <!-- TEXT always first in HTML = first on mobile, left column on desktop -->
+    <div class="hero-text">
       <div class="eyebrow fade-up">Online guitar lessons for adults</div>
       <h1 class="hero-title fade-up delay-1">It's not your age.<br>It's the <em>wrong method.</em></h1>
       <p class="hero-sub fade-up delay-2">
@@ -745,7 +744,8 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
       </div>
       <p class="hero-nudge fade-up delay-4">Want to see me play first? <a href="https://www.instagram.com/leonguitar_" target="_blank">Follow @leonguitar_ on Instagram →</a></p>
     </div>
-    <div class="fade-up delay-2">
+    <!-- PHOTO always second in HTML = below text on mobile, right column on desktop -->
+    <div class="hero-photo fade-up delay-2">
       <div class="hero-photo-wrap">
         <img src="hero.jpg" alt="Nicolás León performing live on stage">
         <div class="hero-photo-badge">
