@@ -667,18 +667,22 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     /* Hero — text first, then compact photo below */
-    .hero { padding: 2.5rem 1.25rem 2.5rem; }
+    .hero { padding: 1.5rem 1.25rem 2rem; }
     .hero-inner {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 1.5rem;
     }
     .hero-photo-wrap {
-      aspect-ratio: 3/2;
-      max-height: 260px;
-      border-radius: 12px;
+      aspect-ratio: 16/7;
+      max-height: 200px;
+      border-radius: 10px;
     }
-    .hero-title { font-size: 2.1rem; }
-    .hero-sub { font-size: 0.95rem; max-width: 100%; }
+    .hero-photo-badge {
+      padding: 0.65rem 0.9rem;
+    }
+    .badge-text { font-size: 12px; }
+    .hero-title { font-size: 2rem; margin-bottom: 0.9rem; }
+    .hero-sub { font-size: 0.95rem; max-width: 100%; margin-bottom: 1.4rem; }
 
     /* Trust bar — 2 columns on tablet */
     .trust-bar {
