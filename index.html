@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guitar Lessons with León — Online, 1-on-1</title>
+<title>Guitar Lessons for Busy Adults — León Guitar Online</title>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -22,501 +22,765 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --black: #0c0b09;
-    --white: #f7f4ee;
-    --cream: #ede9df;
-    --warm: #c8b89a;
-    --accent: #c4622d;
-    --accent-light: rgba(196,98,45,0.08);
-    --muted: #8a8278;
-    --serif: 'Playfair Display', Georgia, serif;
-    --sans: 'DM Sans', system-ui, sans-serif;
+    /* Core palette — warm light, built for learning */
+    --bg:        #F5EEE3;   /* warmed-down cream — easier on eyes at night */
+    --bg-soft:   #EDE4D4;   /* parchment — alternate sections */
+    --bg-deep:   #E3D8C6;   /* deeper warm — cards, panels */
+    --text:      #1E1A14;   /* near-black, warm undertone */
+    --text-mid:  #5A5042;   /* mid-tone body copy */
+    --text-muted:#8C7E6E;   /* captions, labels */
+    --accent:    #C4622D;   /* Burnt Sienna — CTAs (kept from brand) */
+    --accent-dk: #A34E22;   /* hover state */
+    --teal:      #2A7C6F;   /* trust / progress signal */
+    --teal-lt:   #DAF0EC;   /* teal tint background */
+    --warm:      #C8A96A;   /* warm gold — highlights */
+    --border:    #D5C9B5;   /* subtle dividers */
+
+    --serif: 'Lora', Georgia, serif;
+    --sans:  'Inter', system-ui, sans-serif;
+  }
+
+  /* ── AUTO DARK MODE (respects OS/browser setting) ── */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:        #1C1814;   /* warm dark — aged paper in low light */
+      --bg-soft:   #242018;   /* slightly lighter warm dark */
+      --bg-deep:   #2E2920;   /* cards, panels */
+      --text:      #F0EAE0;   /* warm off-white text */
+      --text-mid:  #C4B9A8;   /* mid body copy */
+      --text-muted:#8A7E6E;   /* captions */
+      --accent:    #D4703A;   /* Burnt Sienna — slightly brighter on dark */
+      --accent-dk: #C4622D;   /* hover */
+      --teal:      #3A9E8F;   /* brighter teal for dark bg contrast */
+      --teal-lt:   #162420;   /* teal tint on dark */
+      --warm:      #C8A96A;
+      --border:    #3A332A;   /* dark mode dividers */
+    }
+
+    /* nav adjustments for dark */
+    .nav {
+      background: rgba(28, 24, 20, 0.95);
+      border-bottom-color: var(--border);
+    }
+
+    /* hero photo badge on dark */
+    .hero-photo-badge {
+      background: rgba(28, 24, 20, 0.92);
+    }
+
+    /* booking section stays teal but slightly adjusted */
+    .booking-section {
+      background: #1E3D38;
+    }
+
+    /* footer stays dark, just deeper */
+    footer {
+      background: #0E0C09;
+    }
+
+    /* curriculum cells */
+    .curriculum-cell {
+      background: var(--bg-soft);
+    }
+    .curriculum-cell:hover {
+      background: var(--teal-lt);
+    }
+
+    /* review cards */
+    .review-card {
+      background: var(--bg-soft);
+    }
+
+    /* feature pills */
+    .feature-pill {
+      background: var(--bg-soft);
+    }
+
+    /* mockup */
+    .summary-mockup {
+      background: var(--bg-soft);
+    }
+    .mockup-header {
+      background: var(--teal-lt);
+    }
+
+    /* myth rows */
+    .myth-row {
+      background: var(--bg-soft);
+    }
+    .myth-row.positive {
+      background: var(--teal-lt);
+    }
+
+    /* arr cards */
+    .arr-card {
+      background: var(--bg-soft);
+    }
+    .arr-card.highlight {
+      background: rgba(196, 98, 45, 0.08);
+    }
+
+    /* inline quote */
+    .inline-quote {
+      background: var(--teal-lt);
+    }
+
+    /* cta band */
+    .cta-band {
+      background: var(--bg-soft);
+      border-color: var(--border);
+    }
   }
 
   html { scroll-behavior: smooth; }
 
   body {
     font-family: var(--sans);
-    background: var(--black);
-    color: var(--white);
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
+    font-size: 16px;
   }
-
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.6;
-  }
-
-  .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(200,184,154,0.2), transparent); }
 
   /* ── NAV ── */
   .nav {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    padding: 1.5rem 2.5rem;
+    position: sticky;
+    top: 0;
+    background: rgba(253,250,245,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 2;
+    z-index: 100;
   }
-  .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--white); }
-  .nav-logo em { color: var(--accent); }
-  .nav-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--text);
+    font-weight: 600;
+  }
+  .nav-logo em { font-style: italic; color: var(--accent); font-weight: 400; }
+  .nav-cta {
+    font-size: 13px; font-weight: 600; letter-spacing: 0.02em;
+    color: var(--accent); text-decoration: none;
+    border: 1.5px solid var(--accent);
+    padding: 7px 16px; border-radius: 6px;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--accent); color: #fff; }
 
   /* ── HERO ── */
   .hero {
+    background: var(--bg-soft);
+    padding: 5rem 2.5rem 4rem;
     position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 3rem 2.5rem 4rem;
     overflow: hidden;
   }
 
-  .hero-bg {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse 60% 50% at 70% 40%, rgba(196,98,45,0.18) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(200,184,154,0.1) 0%, transparent 60%),
-      var(--black);
-    z-index: 0;
-  }
-
-  .hero-line { position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--warm), transparent); opacity: 0.3; }
-
-  .hero-content { position: relative; z-index: 2; max-width: 680px; }
-
-  .eyebrow {
-    font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 1.2rem;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--accent); }
-
-  .hero-title {
-    font-family: var(--serif);
-    font-size: clamp(2.8rem, 7vw, 5.2rem);
-    line-height: 1.05; font-weight: 400;
-    margin-bottom: 1.5rem; letter-spacing: -0.02em;
-  }
-  .hero-title em { font-style: italic; color: var(--warm); }
-
-  .hero-sub {
-    font-size: 1.05rem; color: var(--muted);
-    max-width: 480px; line-height: 1.7;
-    margin-bottom: 2.5rem; font-weight: 300;
-  }
-  .hero-sub strong { color: var(--white); font-weight: 500; }
-
-  /* stats — inline on desktop, below CTA on mobile */
-  .hero-stats-desktop {
-    position: absolute; bottom: 4rem; right: 2.5rem; z-index: 2;
-    display: flex; flex-direction: column; gap: 1.5rem; text-align: right;
-  }
-  .hero-stats-mobile {
-    display: none;
-    flex-direction: row; gap: 1.5rem;
-    margin-top: 2.5rem; flex-wrap: wrap;
-  }
-  .stat-val { font-family: var(--serif); font-size: 2rem; font-weight: 700; color: var(--white); line-height: 1; }
-  .stat-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
-
-  /* ── BTN ── */
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: var(--accent); color: #fff;
-    font-family: var(--sans); font-size: 15px; font-weight: 500;
-    padding: 15px 32px; border-radius: 4px;
-    text-decoration: none; letter-spacing: 0.01em;
-    transition: all 0.2s; position: relative; overflow: hidden;
-  }
-  .btn-primary::after { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.1); opacity: 0; transition: opacity 0.2s; }
-  .btn-primary:hover::after { opacity: 1; }
-  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(196,98,45,0.35); }
-  .btn-arrow { font-size: 18px; transition: transform 0.2s; }
-  .btn-primary:hover .btn-arrow { transform: translateX(4px); }
-
-  /* ── ABOUT ── */
-  .about {
-    padding: 6rem 2.5rem;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 5rem; align-items: start;
-    max-width: 1100px; margin: 0 auto;
-  }
-  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
-  .section-title { font-family: var(--serif); font-size: 2.4rem; line-height: 1.2; font-weight: 400; margin-bottom: 1.5rem; }
-  .section-title em { font-style: italic; color: var(--warm); }
-  .body-text { font-size: 15px; color: var(--muted); line-height: 1.8; font-weight: 300; }
-  .body-text p + p { margin-top: 1rem; }
-  .body-text strong { color: var(--white); font-weight: 500; }
-
-  .feature-pill {
-    border: 1px solid rgba(200,184,154,0.15); border-radius: 8px;
-    padding: 1.1rem 1.4rem; display: flex; align-items: flex-start; gap: 14px;
-    transition: border-color 0.2s, background 0.2s;
-  }
-  .feature-pill + .feature-pill { margin-top: 0.75rem; }
-
-  .video-wrap {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(200,184,154,0.12);
-    margin-bottom: 1.5rem;
-  }
-  .video-wrap iframe {
+  .hero::before {
+    content: '';
     position: absolute;
-    inset: 0;
-    width: 100%;
+    top: 0; right: 0;
+    width: 45%;
     height: 100%;
-    border: none;
-  }
-  .fp-title a { color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(200,184,154,0.25); transition: border-color 0.2s, color 0.2s; }
-  .fp-title a:hover { color: var(--warm); border-color: var(--warm); }
-
-  a.feature-pill { text-decoration: none; cursor: pointer; display: flex; }
-  a.feature-pill .fp-title { color: var(--white); }
-
-  .feature-pill:hover { border-color: rgba(196,98,45,0.3); background: var(--accent-light); }
-  .fp-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
-  .fp-title { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 3px; }
-  .fp-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
-
-  /* ── CURRICULUM ── */
-  .curriculum-section { background: #0f0e0b; padding: 6rem 2.5rem; }
-  .curriculum-inner { max-width: 1100px; margin: 0 auto; }
-  .section-header { text-align: center; margin-bottom: 3.5rem; }
-  .section-header .section-title { font-size: 2.2rem; }
-
-  .curriculum-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
-    border: 1px solid rgba(200,184,154,0.1); border-radius: 12px; overflow: hidden;
+    background: linear-gradient(135deg, transparent 0%, rgba(196,98,45,0.06) 100%);
+    pointer-events: none;
   }
 
-  .curriculum-cell {
-    padding: 1.4rem 1.5rem;
-    border-right: 1px solid rgba(200,184,154,0.08);
-    border-bottom: 1px solid rgba(200,184,154,0.08);
-    background: rgba(255,255,255,0.015);
-    transition: background 0.2s;
-    position: relative;
-  }
-  .curriculum-cell:hover { background: rgba(196,98,45,0.05); }
-  .curriculum-cell:nth-child(3n) { border-right: none; }
-  .curriculum-cell:nth-last-child(-n+3) { border-bottom: none; }
-
-  .cell-level { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
-  .cell-name { font-family: var(--serif); font-size: 1rem; color: var(--white); margin-bottom: 8px; line-height: 1.3; }
-  .cell-desc { font-size: 12px; color: var(--muted); line-height: 1.55; }
-
-  .cell-songs-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--warm); opacity: 0.7; margin-top: 8px; margin-bottom: 3px; }
-  .cell-songs { font-size: 12px; color: var(--muted); font-style: italic; line-height: 1.5; }
-
-  .inline-quote {
-    padding: 3.5rem 2.5rem;
-    max-width: 780px;
+  .hero-inner {
+    max-width: 1100px;
     margin: 0 auto;
-    text-align: center;
-  }
-
-  .inline-quote blockquote {
-    font-family: var(--serif);
-    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-    font-style: italic;
-    font-weight: 400;
-    color: rgba(247,244,238,0.75);
-    line-height: 1.55;
-    margin-bottom: 1.25rem;
-  }
-
-  .inline-quote blockquote::before { content: '\201C'; color: var(--accent); }
-  .inline-quote blockquote::after  { content: '\201D'; color: var(--accent); }
-
-  .inline-quote cite {
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--warm);
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
   }
 
-  .inline-quote cite::before,
-  .inline-quote cite::after {
-    content: '';
-    display: inline-block;
-    width: 24px;
-    height: 1px;
-    background: var(--warm);
-    opacity: 0.4;
-  }
-
-  .mastery-note {
-    margin-top: 1.5rem;
-    border: 1px solid rgba(196,98,45,0.2);
-    border-radius: 8px; padding: 1rem 1.4rem;
-    display: flex; align-items: center; gap: 12px;
-    font-size: 13px; color: var(--muted);
-  }
-  .mastery-note strong { color: var(--white); }
-
-  /* ── ARRANGEMENTS ── */
-  .arrangements-section { padding: 6rem 2.5rem; }
-  .arrangements-inner {
-    max-width: 1100px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
-  }
-
-  .arrangement-visual { display: flex; flex-direction: column; gap: 0.75rem; }
-
-  .arr-card {
-    border: 1px solid rgba(200,184,154,0.12);
-    border-radius: 10px; padding: 1.2rem 1.5rem;
-    position: relative; overflow: hidden;
-    transition: border-color 0.2s;
-  }
-  .arr-card:hover { border-color: rgba(196,98,45,0.3); }
-  .arr-card::before {
-    content: '';
-    position: absolute; left: 0; top: 0; bottom: 0;
-    width: 3px; background: var(--accent);
-    opacity: 0.4;
-  }
-  .arr-level-tag {
-    font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
-  }
-  .arr-song { font-size: 14px; font-weight: 500; color: var(--white); margin-bottom: 3px; }
-  .arr-detail { font-size: 12px; color: var(--muted); }
-
-  /* ── SUMMARY ── */
-  .summary-section { background: #0f0e0b; padding: 6rem 2.5rem; }
-  .summary-inner {
-    max-width: 1100px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
-  }
-
-  .summary-mockup {
-    border: 1px solid rgba(200,184,154,0.12);
-    border-radius: 14px; overflow: hidden;
-  }
-  .mockup-header {
-    background: rgba(196,98,45,0.12); border-bottom: 1px solid rgba(200,184,154,0.1);
-    padding: 0.9rem 1.25rem;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .mockup-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(200,184,154,0.3); }
-  .mockup-title { font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
-  .mockup-body { padding: 1.5rem; }
-  .mockup-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
-  .mockup-line { height: 8px; border-radius: 4px; background: rgba(200,184,154,0.12); margin-bottom: 8px; }
-  .mockup-line.short { width: 60%; }
-  .mockup-line.medium { width: 80%; }
-  .mockup-line.full { width: 100%; }
-  .mockup-divider { height: 1px; background: rgba(200,184,154,0.08); margin: 1rem 0; }
-  .mockup-chip {
-    display: inline-flex; align-items: center; gap: 6px;
-    border: 1px solid rgba(196,98,45,0.3); border-radius: 20px;
-    padding: 4px 10px; font-size: 11px; color: var(--accent);
-    margin-right: 6px; margin-bottom: 6px;
-  }
-
-  /* ── REVIEWS ── */
-  .reviews-section { padding: 6rem 2.5rem; }
-  .reviews-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem; max-width: 1100px; margin: 0 auto;
-  }
-  .review-card {
-    border: 1px solid rgba(200,184,154,0.1); border-radius: 12px;
-    padding: 1.75rem; background: rgba(255,255,255,0.02);
-    position: relative; transition: border-color 0.2s, transform 0.2s;
-  }
-  .review-card:hover { border-color: rgba(196,98,45,0.25); transform: translateY(-2px); }
-  .review-card::before {
-    content: '"'; font-family: var(--serif); font-size: 5rem;
-    color: var(--accent); opacity: 0.12;
-    position: absolute; top: 0.5rem; left: 1.25rem; line-height: 1;
-  }
-  .review-stars { display: flex; gap: 3px; margin-bottom: 1rem; }
-  .star { color: #f4b942; font-size: 13px; }
-  .review-text { font-size: 14px; color: rgba(247,244,238,0.72); line-height: 1.75; margin-bottom: 1.25rem; font-weight: 300; }
-  .reviewer { display: flex; align-items: center; gap: 10px; }
-  .reviewer-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #fff; flex-shrink: 0; }
-  .reviewer-name { font-size: 13px; font-weight: 500; color: var(--white); }
-  .reviewer-sub { font-size: 12px; color: var(--muted); }
-
-  /* ── BOOKING ── */
-  .booking-section { padding: 7rem 2.5rem; text-align: center; position: relative; overflow: hidden; }
-  .booking-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(196,98,45,0.1) 0%, transparent 70%); pointer-events: none; }
-  .booking-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 400; line-height: 1.15; margin-bottom: 1.2rem; }
-  .booking-title em { font-style: italic; color: var(--warm); }
-  .booking-sub { font-size: 15px; color: var(--muted); max-width: 440px; margin: 0 auto 2.5rem; line-height: 1.7; font-weight: 300; }
-  .booking-note { margin-top: 1.25rem; font-size: 13px; color: var(--muted); }
-  .booking-note a { color: var(--warm); text-decoration: none; }
-  .booking-note a:hover { text-decoration: underline; }
-  .instagram-nudge { margin-top: 0.75rem; font-size: 13px; color: var(--muted); }
-  .instagram-nudge a { color: var(--warm); text-decoration: none; font-weight: 500; }
-  .instagram-nudge a:hover { text-decoration: underline; }
-
-  /* ── FOOTER ── */
-  footer { border-top: 1px solid rgba(200,184,154,0.1); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; }
-  .footer-logo { font-family: var(--serif); font-size: 1rem; color: var(--muted); }
-  .footer-logo em { color: var(--accent); }
-  .footer-copy { font-size: 12px; color: rgba(138,130,120,0.5); }
-  .footer-right { display: flex; align-items: center; gap: 1rem; }
-  .instagram-link { display: flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; transition: color 0.2s; }
-  .instagram-link:hover { color: var(--warm); }
-  .instagram-link svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-
-  /* ── ANIMATIONS ── */
-  .fade-up { opacity: 0; transform: translateY(24px); animation: fadeUp 0.7s ease forwards; }
-  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-  .delay-1 { animation-delay: 0.1s; }
-  .delay-2 { animation-delay: 0.25s; }
-  .delay-3 { animation-delay: 0.4s; }
-  .delay-4 { animation-delay: 0.55s; }
-
-  .hero-photo {
-    position: absolute;
-    right: 0; top: 0; bottom: 0;
-    width: 52%;
-    z-index: 1;
+  .hero-photo-wrap {
+    position: relative;
+    border-radius: 16px;
     overflow: hidden;
+    box-shadow: 0 20px 60px rgba(30,26,20,0.15);
+    aspect-ratio: 4/5;
   }
-
-  .hero-photo img {
+  .hero-photo-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    opacity: 0.55;
-    mix-blend-mode: luminosity;
-    filter: contrast(1.05);
   }
-
-  .hero-photo::after {
-    content: '';
+  .hero-photo-badge {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, var(--black) 0%, transparent 40%),
-                linear-gradient(0deg, var(--black) 0%, transparent 30%);
-  }
-
-  .social-proof {
+    bottom: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
+    background: rgba(28, 22, 14, 0.82);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
     display: flex;
-    flex-direction: column;
-    margin-top: 1.75rem;
-    max-width: 460px;
-    padding: 1rem 1.25rem;
-    border-left: 2px solid var(--accent);
-    background: rgba(196,98,45,0.05);
-    border-radius: 0 6px 6px 0;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .badge-stars { color: #E8A020; font-size: 13px; letter-spacing: 1px; }
+  .badge-text { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.4; }
+  .badge-text strong { color: #fff; font-weight: 600; display: block; }
+
+  .eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--teal);
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 20px; height: 2px;
+    background: var(--teal);
+    border-radius: 2px;
   }
 
-  .sp-quote {
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 1.15;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+  }
+  .hero-title em { font-style: italic; font-weight: 400; color: var(--accent); }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    max-width: 480px;
+  }
+  .hero-sub strong { color: var(--text); font-weight: 600; }
+
+  .hero-nudge {
+    margin-top: 1rem;
     font-size: 13px;
-    color: rgba(247,244,238,0.65);
-    line-height: 1.65;
-    font-style: italic;
-    font-weight: 300;
+    color: var(--text-muted);
   }
-
-  .sp-author {
-    font-size: 11px;
+  .hero-nudge a {
+    color: var(--teal);
+    text-decoration: none;
     font-weight: 500;
-    color: var(--warm);
-    margin-top: 6px;
-    letter-spacing: 0.04em;
+  }
+  .hero-nudge a:hover { text-decoration: underline; }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--teal);
+    padding: 1rem 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.9);
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .trust-icon { font-size: 16px; }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: #fff;
+    font-family: var(--sans); font-size: 15px; font-weight: 600;
+    padding: 14px 28px; border-radius: 8px;
+    text-decoration: none; letter-spacing: 0.01em;
+    transition: all 0.2s; box-shadow: 0 2px 12px rgba(196,98,45,0.25);
+  }
+  .btn-primary:hover { background: var(--accent-dk); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(196,98,45,0.35); }
+  .btn-arrow { font-size: 17px; transition: transform 0.2s; }
+  .btn-primary:hover .btn-arrow { transform: translateX(4px); }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--accent);
+    font-family: var(--sans); font-size: 15px; font-weight: 600;
+    padding: 13px 28px; border-radius: 8px;
+    text-decoration: none; border: 2px solid var(--accent);
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { background: var(--accent); color: #fff; }
+
+  /* ── SECTION BASICS ── */
+  .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    line-height: 1.25; font-weight: 600; color: var(--text);
+    margin-bottom: 1.25rem;
+  }
+  .section-title em { font-style: italic; font-weight: 400; color: var(--accent); }
+  .body-text { font-size: 15px; color: var(--text-mid); line-height: 1.85; }
+  .body-text p + p { margin-top: 1rem; }
+  .body-text strong { color: var(--text); font-weight: 600; }
+
+  .divider { height: 1px; background: var(--border); }
+
+  /* ── INLINE QUOTE ── */
+  .inline-quote {
+    background: var(--teal-lt);
+    border-left: 4px solid var(--teal);
+    padding: 2.5rem 3rem;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .inline-quote blockquote {
+    font-family: var(--serif);
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 0.9rem;
+  }
+  .inline-quote cite {
+    font-size: 12px; font-style: normal; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal);
   }
 
-  @media (max-width: 768px) {
-    .hero-photo { width: 100%; }
-    .hero-photo img { opacity: 0.2; }
-    .social-proof { max-width: 100%; }
+  /* ── REFRAME ── */
+  .reframe {
+    padding: 5rem 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
   }
-    .nav { padding: 1.25rem 1.5rem; }
-    .hero { padding: 5rem 1.5rem 3.5rem; }
-    .hero-stats-desktop { display: none; }
-    .hero-stats-mobile { display: flex; }
-    .about, .arrangements-inner, .summary-inner { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
-    .curriculum-section, .reviews-section, .booking-section { padding: 4rem 1.5rem; }
+
+  .myth-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    margin-bottom: 0.75rem;
+  }
+  .myth-row.positive {
+    border-color: var(--teal);
+    background: var(--teal-lt);
+  }
+  .myth-cross { font-size: 15px; color: var(--text-muted); flex-shrink: 0; margin-top: 2px; }
+  .myth-check { font-size: 15px; color: var(--teal); flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .myth-text { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+  .myth-text strong { color: var(--text); font-weight: 600; display: block; margin-bottom: 3px; }
+
+  /* ── CTA BAND ── */
+  .cta-band {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 2.25rem 2.5rem;
+    text-align: center;
+  }
+  .cta-band p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    padding: 5rem 2.5rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: start;
+    max-width: 1100px; margin: 0 auto;
+  }
+
+  .feature-pill {
+    border: 1px solid var(--border); border-radius: 10px;
+    padding: 1rem 1.25rem; display: flex; align-items: flex-start; gap: 12px;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    background: var(--bg);
+  }
+  .feature-pill + .feature-pill { margin-top: 0.6rem; }
+  .feature-pill:hover {
+    border-color: var(--teal);
+    background: var(--teal-lt);
+    box-shadow: 0 2px 12px rgba(42,124,111,0.08);
+  }
+  a.feature-pill .fp-title { color: var(--text); }
+  .fp-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+  .fp-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .fp-desc { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+  .video-wrap {
+    position: relative; width: 100%; padding-bottom: 56.25%;
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(30,26,20,0.08);
+    margin-bottom: 1.25rem;
+  }
+  .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+
+  /* ── CURRICULUM ── */
+  .curriculum-section { background: var(--bg-soft); padding: 5rem 2.5rem; }
+  .curriculum-inner { max-width: 1100px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 3rem; }
+
+  .curriculum-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  }
+  .curriculum-cell {
+    padding: 1.25rem 1.35rem;
+    background: var(--bg);
+    transition: background 0.2s;
+  }
+  .curriculum-cell:hover { background: var(--teal-lt); }
+  .cell-level {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--teal); margin-bottom: 5px;
+  }
+  .cell-name {
+    font-family: var(--serif); font-size: 0.95rem;
+    color: var(--text); margin-bottom: 6px; line-height: 1.3; font-weight: 600;
+  }
+  .cell-desc { font-size: 12px; color: var(--text-muted); line-height: 1.55; }
+  .cell-songs-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--warm);
+    margin-top: 7px; margin-bottom: 3px;
+  }
+  .cell-songs { font-size: 12px; color: var(--text-muted); font-style: italic; line-height: 1.5; }
+
+  .mastery-note {
+    margin-top: 1.25rem;
+    border: 1px solid var(--teal);
+    background: var(--teal-lt);
+    border-radius: 10px; padding: 1rem 1.25rem;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13px; color: var(--text-mid);
+  }
+  .mastery-note strong { color: var(--teal); }
+
+  /* ── ARRANGEMENTS ── */
+  .arrangements-section { padding: 5rem 2.5rem; }
+  .arrangements-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  .arrangement-visual { display: flex; flex-direction: column; gap: 0.75rem; }
+  .arr-card {
+    border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.1rem 1.35rem; background: var(--bg);
+    position: relative; overflow: hidden; transition: border-color 0.2s;
+  }
+  .arr-card:hover { border-color: var(--teal); }
+  .arr-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: var(--teal); opacity: 0.5;
+  }
+  .arr-card.highlight { border-color: var(--accent); background: rgba(196,98,45,0.03); }
+  .arr-card.highlight::before { background: var(--accent); opacity: 0.7; }
+  .arr-level-tag {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--teal); margin-bottom: 5px;
+  }
+  .arr-card.highlight .arr-level-tag { color: var(--accent); }
+  .arr-song { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .arr-detail { font-size: 12px; color: var(--text-muted); }
+
+  /* ── SUMMARY ── */
+  .summary-section { background: var(--bg-soft); padding: 5rem 2.5rem; }
+  .summary-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  .summary-mockup {
+    border: 1px solid var(--border); border-radius: 14px;
+    overflow: hidden; background: var(--bg);
+    box-shadow: 0 4px 24px rgba(30,26,20,0.07);
+  }
+  .mockup-header {
+    background: var(--teal-lt); border-bottom: 1px solid var(--border);
+    padding: 0.85rem 1.2rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .mockup-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+  .mockup-title { font-size: 12px; font-weight: 500; color: var(--text-muted); }
+  .mockup-body { padding: 1.5rem; }
+  .mockup-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem;
+  }
+  .mockup-line { height: 8px; border-radius: 4px; background: var(--bg-deep); margin-bottom: 7px; }
+  .mockup-line.short { width: 60%; }
+  .mockup-line.medium { width: 80%; }
+  .mockup-line.full { width: 100%; }
+  .mockup-divider { height: 1px; background: var(--border); margin: 1rem 0; }
+  .mockup-chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    border: 1px solid var(--teal); border-radius: 20px;
+    padding: 4px 10px; font-size: 11px; color: var(--teal);
+    margin-right: 5px; margin-bottom: 5px; background: var(--teal-lt);
+  }
+
+  /* ── FAQ ── */
+  .faq-section { padding: 5rem 2.5rem; background: var(--bg-soft); }
+  .faq-inner { max-width: 720px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+  .faq-q {
+    list-style: none;
+    padding: 1.25rem 0;
+    font-size: 15px; font-weight: 600; color: var(--text);
+    cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    user-select: none;
+  }
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-q::after {
+    content: '+'; font-size: 20px; font-weight: 300;
+    color: var(--teal); flex-shrink: 0; transition: transform 0.2s;
+  }
+  details[open] .faq-q::after { transform: rotate(45deg); }
+  details[open] .faq-q { color: var(--teal); }
+  .faq-a {
+    font-size: 14px; color: var(--text-mid); line-height: 1.8;
+    padding-bottom: 1.25rem; max-width: 640px;
+  }
+
+  /* ── REVIEWS ── */
+  .reviews-section { padding: 5rem 2.5rem; }
+  .reviews-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem; max-width: 1100px; margin: 2rem auto 0;
+  }
+  .review-card {
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.6rem; background: var(--bg);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .review-card:hover { border-color: var(--teal); box-shadow: 0 4px 20px rgba(42,124,111,0.08); }
+  .review-stars { display: flex; gap: 3px; margin-bottom: 0.9rem; }
+  .star { color: #E8A020; font-size: 14px; }
+  .review-text {
+    font-size: 14px; color: var(--text-mid); line-height: 1.75;
+    margin-bottom: 1.1rem;
+  }
+  .reviewer { display: flex; align-items: center; gap: 10px; }
+  .reviewer-avatar {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--teal); display: flex; align-items: center;
+    justify-content: center; font-size: 13px; font-weight: 700;
+    color: #fff; flex-shrink: 0;
+  }
+  .reviewer-name { font-size: 13px; font-weight: 600; color: var(--text); }
+  .reviewer-sub { font-size: 12px; color: var(--text-muted); }
+
+  /* ── BOOKING ── */
+  .booking-section {
+    background: var(--teal);
+    padding: 6rem 2.5rem;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .booking-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .booking-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 600; line-height: 1.2;
+    margin-bottom: 1rem; color: #fff;
+  }
+  .booking-title em { font-style: italic; font-weight: 400; color: rgba(255,255,255,0.75); }
+  .booking-sub {
+    font-size: 16px; color: rgba(255,255,255,0.8);
+    max-width: 460px; margin: 0 auto 2.25rem; line-height: 1.7;
+  }
+  .btn-booking {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: #fff;
+    font-family: var(--sans); font-size: 16px; font-weight: 700;
+    padding: 16px 36px; border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    transition: all 0.2s;
+  }
+  .btn-booking:hover { background: var(--accent-dk); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.25); }
+  .booking-note { margin-top: 1.1rem; font-size: 13px; color: rgba(255,255,255,0.6); }
+  .booking-note a { color: rgba(255,255,255,0.85); text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--text);
+    padding: 1.75rem 2.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-logo { font-family: var(--serif); font-size: 1rem; color: rgba(255,255,255,0.6); font-weight: 600; }
+  .footer-logo em { font-style: italic; color: var(--accent); font-weight: 400; }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+  .instagram-link {
+    display: flex; align-items: center; gap: 6px;
+    color: rgba(255,255,255,0.5); text-decoration: none;
+    font-size: 12px; font-weight: 500; transition: color 0.2s;
+  }
+  .instagram-link:hover { color: rgba(255,255,255,0.9); }
+  .instagram-link svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ── ANIMATIONS ── */
+  .fade-up { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s ease forwards; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.22s; }
+  .delay-3 { animation-delay: 0.36s; }
+  .delay-4 { animation-delay: 0.5s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-photo-wrap { aspect-ratio: 16/9; max-height: 380px; }
+    .reframe, .about, .arrangements-inner, .summary-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .reframe, .about { padding: 3.5rem 1.5rem; }
+    .arrangements-section, .summary-section, .reviews-section, .faq-section { padding: 3.5rem 1.5rem; }
+    .curriculum-section { padding: 3.5rem 1.5rem; }
     .curriculum-grid { grid-template-columns: 1fr 1fr; }
-    .curriculum-cell:nth-child(3n) { border-right: 1px solid rgba(200,184,154,0.08); }
-    .curriculum-cell:nth-child(2n) { border-right: none; }
     .reviews-grid { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+    .hero { padding: 3rem 1.5rem 3rem; }
+    .nav { padding: 1rem 1.5rem; }
+    .trust-bar { gap: 1.5rem; padding: 1rem 1.5rem; }
+    footer { flex-direction: column; gap: 0.6rem; text-align: center; }
   }
-
-  @media (max-width: 480px) {
+  @media (max-width: 560px) {
     .curriculum-grid { grid-template-columns: 1fr; }
-    .curriculum-cell { border-right: none !important; }
+    .booking-section { padding: 4rem 1.5rem; }
   }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">León <em>Guitar</em></div>
+  <a href="https://calendar.app.google/8o8ckbia8TZ4Js6N8" target="_blank" class="nav-cta" onclick="fbq('track','Schedule');">Free trial lesson</a>
+</nav>
+
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-line"></div>
-  <div class="hero-photo">
-    <img src="hero.jpg" alt="Nicolás León performing live on stage">
-  </div>
-  <nav class="nav">
-    <div class="nav-logo">León <em>Guitar</em></div>
-    <div class="nav-tag">Online · 1-on-1</div>
-  </nav>
-  <div class="hero-content">
-    <div class="eyebrow fade-up">Guitar lessons for adults</div>
-    <h1 class="hero-title fade-up delay-1">Learn the songs<br>you <em>actually</em> love.</h1>
-    <p class="hero-sub fade-up delay-2">
-      Online guitar lessons with <strong>Nicolás León</strong> — structured, personal, and built around your goals. No boring exercises. Just real music, real progress.
-    </p>
-    <a href="https://calendar.app.google/8o8ckbia8TZ4Js6N8" target="_blank" class="btn-primary fade-up delay-3" onclick="fbq('track','Schedule');">
-      Book your trial lesson <span class="btn-arrow">→</span>
-    </a>
-    <p class="instagram-nudge fade-up delay-4">Want to see me play first? <a href="https://www.instagram.com/leonguitar_" target="_blank">Follow @leonguitar_ on Instagram →</a></p>
-    <!-- Mobile stats -->
-    <div class="hero-stats-mobile fade-up delay-4">
-      <div><div class="stat-val">4.8★</div><div class="stat-label">Avg rating</div></div>
-      <div><div class="stat-val">11+</div><div class="stat-label">Students</div></div>
-      <div><div class="stat-val">12</div><div class="stat-label">Levels</div></div>
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow fade-up">Online guitar lessons for adults</div>
+      <h1 class="hero-title fade-up delay-1">It's not your age.<br>It's the <em>wrong method.</em></h1>
+      <p class="hero-sub fade-up delay-2">
+        Most adults give up guitar because they're learning the wrong way — not because they're too old or too busy. <strong>Even 15 minutes of smart daily practice beats an hour of the wrong approach.</strong>
+      </p>
+      <div class="fade-up delay-3" style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+        <a href="https://calendar.app.google/8o8ckbia8TZ4Js6N8" target="_blank" class="btn-primary" onclick="fbq('track','Schedule');">
+          Book your free trial <span class="btn-arrow">→</span>
+        </a>
+      </div>
+      <p class="hero-nudge fade-up delay-4">Want to see me play first? <a href="https://www.instagram.com/leonguitar_" target="_blank">Follow @leonguitar_ on Instagram →</a></p>
+    </div>
+    <div class="fade-up delay-2">
+      <div class="hero-photo-wrap">
+        <img src="hero.jpg" alt="Nicolás León performing live on stage">
+        <div class="hero-photo-badge">
+          <div>
+            <div class="badge-stars">★★★★★</div>
+            <div class="badge-text"><strong>4.8 average rating</strong>3 of 7 spots currently available</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <!-- Desktop stats -->
-  <div class="hero-stats-desktop fade-up delay-4">
-    <div><div class="stat-val">4.8★</div><div class="stat-label">Average rating</div></div>
-    <div><div class="stat-val">11+</div><div class="stat-label">Students taught</div></div>
-    <div><div class="stat-val">12</div><div class="stat-label">Level curriculum</div></div>
-  </div>
 </section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">✓</span> Free 30-min trial lesson</div>
+  <div class="trust-item"><span class="trust-icon">✓</span> 100% online — Google Meet</div>
+  <div class="trust-item"><span class="trust-icon">✓</span> 12-level structured curriculum</div>
+  <div class="trust-item"><span class="trust-icon">✓</span> Written summary after every lesson</div>
+</div>
 
 <div class="divider"></div>
 
 <!-- INLINE QUOTE — Raymond -->
 <div class="inline-quote">
-  <blockquote>After a busy week at work, Nico's lesson summaries provide a guide for my weekly practice. I strongly recommend anyone to learn guitar with Nico online — he is an excellent teacher for all levels.</blockquote>
-  <cite>Raymond, online student</cite>
+  <blockquote>After a busy week at work, Nico's lesson summaries give me a clear guide for my weekly practice. I'm improving at a rapid rate — and it's so convenient from home.</blockquote>
+  <cite>Raymond — online student</cite>
+</div>
+
+<div class="divider"></div>
+
+<!-- REFRAME — label the real problem -->
+<section>
+  <div class="reframe">
+    <div>
+      <div class="section-label">The real reason people struggle</div>
+      <h2 class="section-title">You're not the problem.<br><em>The approach is.</em></h2>
+      <div class="body-text">
+        <p>Adults who feel stuck on guitar almost always share the same story: they tried YouTube, an app, or a teacher who gave them exercises with no connection to the music they love.</p>
+        <p>After a few weeks of not seeing results, it's easy to conclude <strong>"I'm just not a musical person"</strong> or <strong>"I started too late."</strong></p>
+        <p>But that's not it. The problem is learning without a structure designed for how adults actually learn — songs first, theory when it serves you, and clear milestones so you can feel progress happening.</p>
+        <p>That's what I built. A system that works <strong>specifically for adults</strong> who have a life and 15 minutes a day to practice.</p>
+      </div>
+    </div>
+    <div>
+      <div class="myth-row">
+        <span class="myth-cross">✕</span>
+        <div class="myth-text"><strong>"I'm too old to start"</strong>Adults learn differently than kids — not worse. You have patience, context, and discipline that children don't. I've taught students in their 30s, 40s, 50s, and 60s who started from zero.</div>
+      </div>
+      <div class="myth-row">
+        <span class="myth-cross">✕</span>
+        <div class="myth-text"><strong>"I don't have enough time"</strong>15 minutes of focused, targeted practice every day is more effective than a random 1-hour session on the weekend. Consistency beats volume.</div>
+      </div>
+      <div class="myth-row">
+        <span class="myth-cross">✕</span>
+        <div class="myth-text"><strong>"I tried before and it didn't work"</strong>You weren't taught with a method built for you. Generic beginner courses aren't designed for adults who want to play real music they love, not exercises.</div>
+      </div>
+      <div class="myth-row positive">
+        <span class="myth-check">✓</span>
+        <div class="myth-text"><strong>What actually works</strong>A structured path, songs you care about, and a teacher who adapts every lesson to exactly where you are right now.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND 1 -->
+<div class="cta-band">
+  <p>Still not sure? The trial is free — no experience or equipment needed.</p>
+  <a href="https://calendar.app.google/8o8ckbia8TZ4Js6N8" target="_blank" class="btn-primary" onclick="fbq('track','Schedule');">
+    Start with a free trial lesson <span class="btn-arrow">→</span>
+  </a>
 </div>
 
 <div class="divider"></div>
@@ -525,12 +789,13 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 <section>
   <div class="about">
     <div>
-      <div class="section-label">About the lessons</div>
-      <h2 class="section-title">A system built for <em>real progress</em></h2>
+      <div class="section-label">How it works</div>
+      <h2 class="section-title">A method built for <em>adult beginners.</em></h2>
       <div class="body-text">
         <p>I'm Nicolás, a guitarist and composer based in Colombia. I've taught students across Australia, the UK, and beyond — online, 1-on-1, in English.</p>
-        <p>Every student starts with a <strong>structured placement</strong> to find exactly where they are. Then we build from there — level by level, song by song — with a clear path forward at every step.</p>
-        <p>No generic YouTube tutorials. No wasted lessons. Just <strong>a curriculum that grows with you.</strong></p>
+        <p>Every student starts with a <strong>structured placement</strong> to find exactly where you are — not where you think you should be. Then we build from there, with real songs you chose, and a clear map of what you're working toward.</p>
+        <p>No boring drills for the sake of it. No generic YouTube content. Just <strong>a curriculum that's personal, progressive, and built around the music you actually want to play.</strong></p>
+        <p>Students in their 30s, 40s, 50s, and 60s have gone from complete beginner to playing the songs they love — some in just a few months. Not because they suddenly had more time. Because they finally had the right approach.</p>
       </div>
     </div>
     <div>
@@ -539,19 +804,19 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
       </div>
       <a href="#curriculum" class="feature-pill">
         <div class="fp-icon">🎯</div>
-        <div><div class="fp-title">12-Level Structured Curriculum</div><div class="fp-desc">From your first open chord to advanced lead playing — mapped outcomes at every level so you always know where you're going.</div></div>
+        <div><div class="fp-title">12-Level Structured Curriculum</div><div class="fp-desc">From your first open chord to advanced playing — mapped outcomes at every level so you always know where you're going and how far you've come.</div></div>
       </a>
       <a href="#arrangements" class="feature-pill">
         <div class="fp-icon">🎼</div>
-        <div><div class="fp-title">Arrangements tailored to your level</div><div class="fp-desc">Every song is arranged to match exactly where you are — not a watered-down version, a real arrangement you can actually play and be proud of.</div></div>
+        <div><div class="fp-title">Songs arranged for your exact level</div><div class="fp-desc">You play real versions of songs you love — arranged to match exactly where you are, so you're never stuck on something too hard or bored by something too easy.</div></div>
       </a>
       <a href="#summary" class="feature-pill">
         <div class="fp-icon">📋</div>
-        <div><div class="fp-title">Written summary after every lesson</div><div class="fp-desc">A personalised recap of what we covered and exactly what to practice — sent to you after each session so nothing gets lost.</div></div>
+        <div><div class="fp-title">Written summary after every lesson</div><div class="fp-desc">A clear, personalised practice plan sent after each session — so even on a busy week, you know exactly what to focus on for just 15 minutes a day.</div></div>
       </a>
       <div class="feature-pill">
-        <div class="fp-icon">🌍</div>
-        <div><div class="fp-title">100% online, any timezone</div><div class="fp-desc">Lessons over Zoom. Students in Australia, UK, US and beyond. Half the price of a local teacher, none of the commute.</div></div>
+        <div class="fp-icon">🌏</div>
+        <div><div class="fp-title">100% online — your schedule, your timezone</div><div class="fp-desc">Lessons on Google Meet. Students in Australia, UK, US and beyond. No commute — half the price of local in-person lessons.</div></div>
       </div>
     </div>
   </div>
@@ -563,10 +828,10 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 <section class="curriculum-section" id="curriculum">
   <div class="curriculum-inner">
     <div class="section-header">
-      <div class="section-label" style="justify-content:center;display:flex">The curriculum</div>
-      <h2 class="section-title">9 levels. <em>One clear path.</em></h2>
-      <p style="font-size:15px;color:var(--muted);max-width:500px;margin:0 auto;font-weight:300;line-height:1.7">
-        Every level has mapped outcomes, real songs, and specific techniques. You advance when you're ready — not on a fixed schedule.
+      <div class="section-label" style="justify-content:center;display:flex">Your roadmap</div>
+      <h2 class="section-title">9 levels. <em>One clear path forward.</em></h2>
+      <p style="font-size:15px;color:var(--text-muted);max-width:520px;margin:0 auto;line-height:1.75">
+        You'll always know where you are and what's next. No more wondering if you're progressing — every level has clear milestones and real songs to prove it.
       </p>
     </div>
     <div class="curriculum-grid">
@@ -641,12 +906,20 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   </div>
 </section>
 
+<!-- CTA BAND 2 -->
+<div class="cta-band">
+  <p>Not sure where you'd fit in? We'll figure it out together in the trial.</p>
+  <a href="https://calendar.app.google/8o8ckbia8TZ4Js6N8" target="_blank" class="btn-primary" onclick="fbq('track','Schedule');">
+    Find your level — free trial lesson <span class="btn-arrow">→</span>
+  </a>
+</div>
+
 <div class="divider"></div>
 
 <!-- INLINE QUOTE — Max -->
 <div class="inline-quote">
   <blockquote>He perfectly blends the joy of playing with the work of learning. A talented, patient and professional teacher — he creates a comfortable and positive environment for progress.</blockquote>
-  <cite>Max, guitar student</cite>
+  <cite>Max — guitar student</cite>
 </div>
 
 <div class="divider"></div>
@@ -655,12 +928,13 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 <section class="arrangements-section" id="arrangements">
   <div class="arrangements-inner">
     <div>
-      <div class="section-label">The arrangement difference</div>
-      <h2 class="section-title">Your song, <em>your level.</em></h2>
+      <div class="section-label">No song is off-limits</div>
+      <h2 class="section-title">Your songs, <em>your level.</em></h2>
       <div class="body-text">
-        <p>Most teachers hand you a full song and tell you to learn it. If it's too hard, you're on your own.</p>
+        <p>Most teachers hand you a full song and tell you to figure it out. Too hard? That's your problem.</p>
         <p>I do it differently. <strong>Every song is arranged specifically for where you are right now</strong> — the right chord voicings, the right picking pattern, the right difficulty. Not a stripped-down version. A real arrangement built for you.</p>
-        <p>As you progress, the arrangement evolves with you. The same song can grow from Level 2 all the way to Level 7 — each version more complete, more expressive, more yours.</p>
+        <p>As you improve, the arrangement grows with you. The same song can evolve from Level 2 all the way to Level 7 — each version more complete, more expressive, more yours.</p>
+        <p>You pick the songs. I make them playable for you, now.</p>
       </div>
     </div>
     <div class="arrangement-visual">
@@ -669,7 +943,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
         <div class="arr-song">Wonderwall — Oasis</div>
         <div class="arr-detail">Open chords, basic strumming pattern, full song structure</div>
       </div>
-      <div class="arr-card" style="border-color: rgba(196,98,45,0.25); background: rgba(196,98,45,0.04);">
+      <div class="arr-card highlight">
         <div class="arr-level-tag">Level 5 arrangement</div>
         <div class="arr-song">Wonderwall — Oasis</div>
         <div class="arr-detail">Triads, muted strums, richer chord voicings, capo use</div>
@@ -679,7 +953,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
         <div class="arr-song">Wonderwall — Oasis</div>
         <div class="arr-detail">Barre chords, full CAGED positions, expressive dynamics</div>
       </div>
-      <p style="font-size:12px;color:var(--muted);margin-top:0.5rem;padding-left:1rem">Same song. Three levels. All of them real.</p>
+      <p style="font-size:12px;color:var(--text-muted);margin-top:0.4rem;padding-left:1rem">Same song. Three levels. All of them real.</p>
     </div>
   </div>
 </section>
@@ -688,8 +962,8 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 
 <!-- INLINE QUOTE — Ross -->
 <div class="inline-quote">
-  <blockquote>Nicolas is always patient and creative in his approach to lessons, which suits my learning style perfectly. Each lesson is informative and insightful — after every session, I leave with new knowledge and increased confidence.</blockquote>
-  <cite>Ross, 12 months of lessons</cite>
+  <blockquote>Nicolas is always patient and creative in his approach. Each lesson is informative and insightful — after every session, I leave with new knowledge and increased confidence in my playing.</blockquote>
+  <cite>Ross — 12 months of lessons</cite>
 </div>
 
 <div class="divider"></div>
@@ -709,7 +983,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
         <div class="mockup-line medium"></div>
         <div class="mockup-line short"></div>
         <div class="mockup-divider"></div>
-        <div class="mockup-label">Practice this week</div>
+        <div class="mockup-label">Practice this week (15 min/day)</div>
         <div class="mockup-line medium"></div>
         <div class="mockup-line full"></div>
         <div class="mockup-line short"></div>
@@ -721,32 +995,41 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
       </div>
     </div>
     <div>
-      <div class="section-label">After every lesson</div>
-      <h2 class="section-title">You'll never forget <em>what to practice.</em></h2>
+      <div class="section-label">For busy people</div>
+      <h2 class="section-title">Know exactly what to practice — even on a <em>busy week.</em></h2>
       <div class="body-text">
-        <p>After every session, I send you a <strong>written lesson summary</strong> — a clear, personalised recap of what we worked on and exactly what to focus on before the next lesson.</p>
-        <p>No vague homework. No trying to remember what the teacher said. Just a specific, actionable plan that keeps you progressing between lessons.</p>
-        <p>It's one of the things students mention most. <strong>The clarity between sessions is what makes the difference.</strong></p>
+        <p>After every session, I send you a <strong>written lesson summary</strong> — a personalised recap of what we worked on and exactly what to focus on before the next lesson.</p>
+        <p>It's designed specifically for people with full lives. <strong>Even 15 minutes a day with a clear target moves you forward faster than an hour of aimless practice.</strong></p>
+        <p>No vague homework. No trying to remember what the teacher said. Just a specific, actionable plan sitting in your inbox.</p>
+        <p>Students mention this more than anything else. Raymond put it best: <em>"After a busy week at work, the lesson summary gives me a guide for my weekly practice."</em></p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- CTA BAND 3 -->
+<div class="cta-band">
+  <p>Your first lesson summary arrives the same day you take your trial.</p>
+  <a href="https://calendar.app.google/8o8ckbia8TZ4Js6N8" target="_blank" class="btn-primary" onclick="fbq('track','Schedule');">
+    Book your free trial lesson <span class="btn-arrow">→</span>
+  </a>
+</div>
 
 <div class="divider"></div>
 
 <!-- INLINE QUOTE — Juan -->
 <div class="inline-quote">
   <blockquote>He has an incredible ability to make complex things easy to understand — which helped me see the guitar in a much simpler way, even though it's a challenging instrument.</blockquote>
-  <cite>Juan, guitar student</cite>
+  <cite>Juan — guitar student</cite>
 </div>
 
 <div class="divider"></div>
 
 <!-- REVIEWS -->
 <section class="reviews-section">
-  <div class="section-header">
-    <div class="section-label" style="justify-content:center;display:flex">Student reviews</div>
-    <h2 class="section-title" style="text-align:center">What students <em>say</em></h2>
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="section-label">Real students, real results</div>
+    <h2 class="section-title">They said the same <em>things you're thinking.</em></h2>
   </div>
   <div class="reviews-grid">
     <div class="review-card">
@@ -757,7 +1040,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     <div class="review-card">
       <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
       <p class="review-text">I've been studying with Nicolas for over 12 months. He's always patient and creative — each lesson is informative and insightful. After every session, I leave with new knowledge and increased confidence in my playing.</p>
-      <div class="reviewer"><div class="reviewer-avatar" style="background:#7a6a8a">R</div><div><div class="reviewer-name">Ross</div><div class="reviewer-sub">12 months of lessons</div></div></div>
+      <div class="reviewer"><div class="reviewer-avatar" style="background:#5a7a8a">R</div><div><div class="reviewer-name">Ross</div><div class="reviewer-sub">12 months of lessons</div></div></div>
     </div>
     <div class="review-card">
       <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
@@ -766,7 +1049,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     </div>
     <div class="review-card">
       <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-      <p class="review-text">My experience with Nico was extremely positive. He makes complex things easy to understand, is very dynamic, has a great sense of humor, and knows how to adapt to each student's needs. I only stopped lessons because I moved to another city — highly recommended.</p>
+      <p class="review-text">My experience with Nico was extremely positive. He makes complex things easy to understand, is very dynamic, has a great sense of humor, and knows how to adapt to each student's needs. I only stopped because I moved cities — highly recommended.</p>
       <div class="reviewer"><div class="reviewer-avatar" style="background:#5a6a8a">J</div><div><div class="reviewer-name">Juan</div><div class="reviewer-sub">Guitar student</div></div></div>
     </div>
     <div class="review-card" style="grid-column: 1 / -1; max-width: 560px; margin: 0 auto;">
@@ -779,31 +1062,83 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 
 <div class="divider"></div>
 
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div style="margin-bottom:2.5rem;">
+      <div class="section-label">Common questions</div>
+      <h2 class="section-title">Things people ask <em>before booking.</em></h2>
+    </div>
+
+    <details class="faq-item">
+      <summary class="faq-q">Am I too old to start learning guitar?</summary>
+      <div class="faq-a">No. Adults learn differently than children — not slower. You bring patience, focus, and the ability to connect music emotionally to your experience. I've taught students in their 30s, 40s, 50s, and 60s who went from zero to playing songs they love within months. Age is not the barrier. The right method is.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">How much time do I need to practice each week?</summary>
+      <div class="faq-a">15 minutes a day is enough to make real progress — as long as those 15 minutes are targeted. That's exactly what the written lesson summary is for: you always know what to work on, so there's no wasted time. Consistency matters far more than long sessions.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">I tried before and gave up. What makes this different?</summary>
+      <div class="faq-a">Most people quit because they were learning without a clear structure — random YouTube videos, apps that feel like games, or teachers who gave exercises disconnected from music they care about. I start by understanding exactly where you are and what you want to play, then build a path from there. You'll feel progress from the first lesson.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">Can online lessons really work as well as in-person?</summary>
+      <div class="faq-a">That was my biggest doubt too — before I started teaching this way. The honest answer: for most people, online lessons work just as well, and in some ways better. You learn in your own space, with your own guitar, in a comfortable environment with no travel time lost. Screen sharing lets me see your fretting hand up close and annotate TABs in real time. Every student I've taught online has progressed. The key is a stable internet connection and a decent webcam angle — I'll help you set it up in the first session.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">What style of music do you teach?</summary>
+      <div class="faq-a">Whatever you want to play. Rock, pop, blues, folk, fingerpicking, Latin — I adapt the curriculum to your taste. Students have played everything from Foo Fighters to Blackbird to Autumn Leaves. You bring the songs. I'll make them work for your level.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">How does the free trial lesson work?</summary>
+      <div class="faq-a">You book a 30-minute slot, we meet on Google Meet, and I do a quick placement to understand your current level and goals. You'll leave with a real song to work on and a clear sense of where lessons would take you. There's no pressure and no obligation to continue — but most students book their first paid cycle on the same call.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">How are lessons structured and how much do they cost?</summary>
+      <div class="faq-a">Lessons are 1-on-1 on Google Meet, 60 minutes each. I teach in 5-week cycles so you have a consistent rhythm and enough time to see meaningful progress between check-ins. After each lesson you get a written summary with your practice plan for the week. Pricing is shared after the trial — it's significantly less than local in-person lessons.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-q">Do I need to read sheet music?</summary>
+      <div class="faq-a">No. We work with guitar TAB, which is much quicker to learn and more than enough to play any song you want. If you're interested in reading standard notation later, we can cover it — but it's never a requirement.</div>
+    </details>
+  </div>
+</section>
+
 <!-- BOOKING -->
 <section class="booking-section">
-  <div class="eyebrow" style="justify-content:center">Ready to start?</div>
-  <h2 class="booking-title">Pick a time.<br><em>First lesson, no risk.</em></h2>
-  <p class="booking-sub">Choose a slot that works for you. After booking you'll receive confirmation with the trial lesson fee and payment details.</p>
-  <a href="https://calendar.app.google/8o8ckbia8TZ4Js6N8" target="_blank" class="btn-primary" onclick="fbq('track','Schedule');">
-    Choose your time slot <span class="btn-arrow">→</span>
+  <div class="eyebrow" style="justify-content:center; color:rgba(255,255,255,0.7);">Your first step</div>
+  <h2 class="booking-title">30 minutes.<br><em>One free trial lesson.</em></h2>
+  <p class="booking-sub">We'll find exactly where you are, pick a song you want to play, and you'll leave with something real to practice. Free, no obligation, no experience needed.</p>
+  <div style="display:inline-block; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:0.8rem 1.4rem; margin-bottom:1.75rem; font-size:13px; color:rgba(255,255,255,0.85); line-height:1.6;">
+    I keep my roster to a maximum of <strong style="color:#fff;">7 students at a time</strong> — so every person gets the attention their progress deserves.<br>
+    <span style="color:rgba(255,255,255,0.65);">Currently <strong style="color:#fff;">3 spots open.</strong></span>
+  </div>
+  <a href="https://calendar.app.google/8o8ckbia8TZ4Js6N8" target="_blank" class="btn-booking" onclick="fbq('track','Schedule');">
+    Claim your free trial lesson <span class="btn-arrow">→</span>
   </a>
-  <p class="booking-note">Questions? Email <a href="mailto:nico.leonlope@gmail.com">nico.leonlope@gmail.com</a></p>
+  <p class="booking-note">After booking you'll receive confirmation with Google Meet details. Questions? <a href="mailto:nico.leonlope@gmail.com">nico.leonlope@gmail.com</a></p>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">León <em>Guitar</em></div>
   <div class="footer-copy">© 2026 Nicolás León · Online guitar lessons</div>
-  <div class="footer-right">
-    <a href="https://www.instagram.com/leonguitar_" target="_blank" class="instagram-link">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-        <circle cx="12" cy="12" r="4"/>
-        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
-      </svg>
-      @leonguitar_
-    </a>
-  </div>
+  <a href="https://www.instagram.com/leonguitar_" target="_blank" class="instagram-link">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+    </svg>
+    @leonguitar_
+  </a>
 </footer>
 
 </body>
