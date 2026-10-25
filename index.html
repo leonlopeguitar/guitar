@@ -588,6 +588,10 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem; max-width: 1100px; margin: 2rem auto 0;
   }
+  .student-cards-row {
+    max-width: 1100px; margin: 1.25rem auto 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+  }
   .review-card {
     border: 1px solid var(--border); border-radius: 12px;
     padding: 1.6rem; background: var(--bg);
@@ -718,6 +722,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     .curriculum-section { padding: 3rem 1.25rem; }
     .curriculum-grid { grid-template-columns: 1fr 1fr; }
     .reviews-grid { grid-template-columns: 1fr; }
+    .student-cards-row { grid-template-columns: 1fr; }
     .nav { padding: 0.9rem 1.25rem; }
     .nav-logo { font-size: 1rem; }
     .nav-cta { font-size: 12px; padding: 6px 13px; }
@@ -1406,7 +1411,7 @@ document.addEventListener('DOMContentLoaded', renderQuestion);
       <p class="review-text">My experience with Nico was extremely positive. He makes complex things easy to understand, is very dynamic, has a great sense of humor, and knows how to adapt to each student's needs. I only stopped because I moved cities — highly recommended.</p>
       <div class="reviewer"><div class="reviewer-avatar" style="background:#5a6a8a">J</div><div><div class="reviewer-name">Juan</div><div class="reviewer-sub">Guitar student</div></div></div>
     </div>
-    <div class="review-card" style="grid-column: 2 / 3;">
+    <div class="review-card">
       <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
       <p class="review-text">After teaching myself for years, I really enjoyed the structure Nicolas provided. He emphasised technique and different types of strumming, which opened up new avenues for my playing. We even created songs together. Patient, informative, and easy to contact.</p>
       <div class="reviewer"><div class="reviewer-avatar" style="background:#8a6a4a">N</div><div><div class="reviewer-name">Nashi</div><div class="reviewer-sub">Self-taught guitarist, levelling up</div></div></div>
@@ -1414,7 +1419,7 @@ document.addEventListener('DOMContentLoaded', renderQuestion);
   </div>
 
   <!-- Student cards row -->
-  <div style="max-width:1100px; margin:2rem auto 0; display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+  <div class="student-cards-row">
     <div class="review-card" style="background:rgba(196,98,45,0.04); border-color:rgba(196,98,45,0.2);">
       <p class="review-text" style="font-style:italic;">"Thank you for teaching me this year! I learnt so many skills that improved my playing — I loved the different songs and new challenges you set me."</p>
       <div class="reviewer"><div class="reviewer-avatar" style="background:#7a6a9a">A</div><div><div class="reviewer-name">Alvia</div><div class="reviewer-sub">Guitar student</div></div></div>
