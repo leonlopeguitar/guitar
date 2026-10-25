@@ -583,7 +583,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   details[open].faq-item { background: rgba(42,124,111,0.04); }
 
   /* ── REVIEWS ── */
-  .reviews-section { padding: 5rem 2.5rem; }
+  .reviews-section { padding: 5rem 2.5rem 7rem; }
   .reviews-grid {
     display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem; max-width: 1100px; margin: 2rem auto 0;
@@ -888,10 +888,8 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
       <div class="section-label">How it works</div>
       <h2 class="section-title">A method built for <em>adult beginners.</em></h2>
       <div class="body-text">
-        <p>I'm Nicolás, a guitarist and composer based in Colombia. I've taught students across Australia, the UK, and beyond — online, 1-on-1, in English.</p>
-        <p>Every student starts with a <strong>structured placement</strong> to find exactly where you are — not where you think you should be. Then we build from there, with real songs you chose, and a clear map of what you're working toward.</p>
-        <p>No boring drills for the sake of it. No generic YouTube content. Just <strong>a curriculum that's personal, progressive, and built around the music you actually want to play.</strong></p>
-        <p>Students in their 30s, 40s, 50s, and 60s have gone from complete beginner to playing the songs they love — some in just a few months. Not because they suddenly had more time. Because they finally had the right approach.</p>
+        <p>I'm Nicolás — guitarist, composer, and online teacher for students in Australia, the UK, and beyond. Every student starts with a <strong>structured placement</strong>: we find exactly where you are, pick the music you want to play, and build from there.</p>
+        <p>Students in their 30s, 40s, 50s, and 60s have gone from zero to playing real songs in months. Not because they had more time — because they finally had <strong>the right approach.</strong></p>
       </div>
     </div>
     <div>
@@ -1128,13 +1126,25 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     <h2 class="section-title" style="margin-bottom:3rem;">From zero to <em>playing songs you love.</em></h2>
 
     <!-- Timeline: 4 steps with rising visual -->
-    <div style="position:relative; display:flex; justify-content:space-between; align-items:flex-end; max-width:900px; margin:0 auto; padding:0 1rem;">
-
-      <!-- Rising dashed line (purely decorative) -->
-      <div style="position:absolute; bottom:120px; left:8%; right:8%; height:2px; background:repeating-linear-gradient(90deg,#2A7C6F 0,#2A7C6F 7px,transparent 7px,transparent 12px); transform:rotate(-4deg); transform-origin:left center; pointer-events:none;"></div>
+    <style>
+      .tl-wrap { position:relative; display:flex; justify-content:space-between; align-items:flex-end; max-width:900px; margin:0 auto; padding:0 1rem; }
+      .tl-step { display:flex; flex-direction:column; align-items:center; gap:0.75rem; flex:1; position:relative; z-index:1; }
+      .tl-step-label { font-family:Inter,system-ui,sans-serif; font-size:15px; font-weight:700; color:var(--text); }
+      .tl-step-sub { font-family:Georgia,serif; font-size:13px; font-style:italic; color:var(--text-mid); }
+      .tl-line { position:absolute; bottom:120px; left:8%; right:8%; height:2px; background:repeating-linear-gradient(90deg,#2A7C6F 0,#2A7C6F 7px,transparent 7px,transparent 12px); transform:rotate(-4deg); transform-origin:left center; pointer-events:none; }
+      @media (max-width: 700px) {
+        .tl-wrap { flex-direction:column; align-items:center; gap:2rem; padding:0; }
+        .tl-step { flex-direction:row; align-items:center; gap:1.25rem; padding-bottom:0 !important; width:100%; max-width:320px; text-align:left; }
+        .tl-step svg { flex-shrink:0; }
+        .tl-line { display:none; }
+        .tl-step-labels { display:flex; flex-direction:column; gap:0.2rem; }
+      }
+    </style>
+    <div class="tl-wrap">
+      <div class="tl-line"></div>
 
       <!-- STEP 1 — lowest, left -->
-      <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;flex:1;padding-bottom:0px;position:relative;z-index:1;">
+      <div class="tl-step" style="padding-bottom:0px;">
         <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <!-- chord diagram -->
           <rect x="14" y="8" width="44" height="44" rx="4" stroke="#C4622D" stroke-width="2.5"/>
@@ -1150,12 +1160,11 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
           <!-- step number -->
           <text x="36" y="67" text-anchor="middle" font-size="11" font-weight="500" fill="#8C7E6E" font-family="Inter,sans-serif" letter-spacing="0.06em">01</text>
         </svg>
-        <div style="font-family:Inter,system-ui,sans-serif;font-size:15px;font-weight:700;color:var(--text);">Week 1</div>
-        <div style="font-family:Georgia,serif;font-size:13px;font-style:italic;color:var(--text-mid);">Your first real chord</div>
+        <div class="tl-step-labels"><div class="tl-step-label">Week 1</div><div class="tl-step-sub">Your first real chord</div></div>
       </div>
 
       <!-- STEP 2 — a bit higher -->
-      <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;flex:1;padding-bottom:30px;position:relative;z-index:1;">
+      <div class="tl-step" style="padding-bottom:30px;">
         <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <!-- two eighth notes beamed -->
           <ellipse cx="20" cy="54" rx="10" ry="7" fill="#C4622D" transform="rotate(-18,20,54)"/>
@@ -1165,12 +1174,11 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
           <line x1="29" y1="18" x2="59" y2="10" stroke="#C4622D" stroke-width="3"/>
           <text x="36" y="67" text-anchor="middle" font-size="11" font-weight="500" fill="#8C7E6E" font-family="Inter,sans-serif" letter-spacing="0.06em">02</text>
         </svg>
-        <div style="font-family:Inter,system-ui,sans-serif;font-size:15px;font-weight:700;color:var(--text);">Week 4</div>
-        <div style="font-family:Georgia,serif;font-size:13px;font-style:italic;color:var(--text-mid);">First full song</div>
+        <div class="tl-step-labels"><div class="tl-step-label">Week 4</div><div class="tl-step-sub">First full song</div></div>
       </div>
 
       <!-- STEP 3 — higher -->
-      <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;flex:1;padding-bottom:60px;position:relative;z-index:1;">
+      <div class="tl-step" style="padding-bottom:60px;">
         <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <!-- headphones -->
           <path d="M 12 38 C 12 18 60 18 60 38" stroke="#C4622D" stroke-width="5" stroke-linecap="round" fill="none"/>
@@ -1178,26 +1186,23 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
           <rect x="52" y="35" width="14" height="22" rx="6" fill="#C4622D"/>
           <text x="36" y="67" text-anchor="middle" font-size="11" font-weight="500" fill="#8C7E6E" font-family="Inter,sans-serif" letter-spacing="0.06em">03</text>
         </svg>
-        <div style="font-family:Inter,system-ui,sans-serif;font-size:15px;font-weight:700;color:var(--text);">Month 3</div>
-        <div style="font-family:Georgia,serif;font-size:13px;font-style:italic;color:var(--text-mid);">Playing songs you love</div>
+        <div class="tl-step-labels"><div class="tl-step-label">Month 3</div><div class="tl-step-sub">Playing songs you love</div></div>
       </div>
 
       <!-- STEP 4 — highest, right -->
-      <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;flex:1;padding-bottom:90px;position:relative;z-index:1;">
+      <div class="tl-step" style="padding-bottom:90px;">
         <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- acoustic guitar body -->
-          <ellipse cx="36" cy="50" rx="18" ry="14" fill="#C4622D"/>
-          <ellipse cx="36" cy="28" rx="13" ry="10" fill="#C4622D"/>
-          <rect x="33" y="36" width="6" height="16" fill="#C4622D"/>
-          <circle cx="36" cy="50" r="5" fill="rgba(0,0,0,0.2)"/>
-          <!-- neck -->
-          <rect x="33.5" y="12" width="5" height="18" rx="1" fill="#C4622D"/>
-          <!-- headstock -->
-          <rect x="30" y="6" width="12" height="9" rx="2" fill="#C4622D"/>
+          <!-- guitar body: classic figure-8 using a path -->
+          <path d="M36 58 C26 58 20 52 20 46 C20 42 22 39 25 37 C22 35 20 32 20 28 C20 22 26 17 33 17 C34.5 17 36 17.3 37 17.8 L37 12 L35 12 L35 8 L37 8 L37 6 L39 6 L39 8 L41 8 L41 12 L39 12 L39 17.8 C40 17.3 41.5 17 43 17 C50 17 56 22 56 28 C56 32 54 35 51 37 C54 39 56 42 56 46 C56 52 50 58 36 58 Z" fill="#C4622D"/>
+          <!-- waist indents -->
+          <path d="M24 37 C28 35 30 33 30 30 C30 33 32 35 36 37 C40 35 42 33 42 30 C42 33 44 35 48 37" stroke="rgba(0,0,0,0.15)" stroke-width="1" fill="none"/>
+          <!-- sound hole -->
+          <circle cx="36" cy="40" r="6" fill="rgba(0,0,0,0.22)"/>
+          <!-- strings suggestion -->
+          <line x1="36" y1="34" x2="36" y2="56" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
           <text x="36" y="67" text-anchor="middle" font-size="11" font-weight="500" fill="#8C7E6E" font-family="Inter,sans-serif" letter-spacing="0.06em">04</text>
         </svg>
-        <div style="font-family:Inter,system-ui,sans-serif;font-size:15px;font-weight:700;color:var(--text);">Month 6+</div>
-        <div style="font-family:Georgia,serif;font-size:13px;font-style:italic;color:var(--text-mid);">You actually play guitar now</div>
+        <div class="tl-step-labels"><div class="tl-step-label">Month 6+</div><div class="tl-step-sub">You actually play guitar now</div></div>
       </div>
 
     </div><!-- end timeline flex -->
@@ -1432,43 +1437,23 @@ document.addEventListener('DOMContentLoaded', renderQuestion);
     </div>
 
     <details class="faq-item">
-      <summary class="faq-q">Am I too old to start learning guitar?</summary>
-      <div class="faq-a">No. Adults learn differently than children — not slower. You bring patience, focus, and the ability to connect music emotionally to your experience. I've taught students in their 30s, 40s, 50s, and 60s who went from zero to playing songs they love within months. Age is not the barrier. The right method is.</div>
+      <summary class="faq-q">Am I too old to start?</summary>
+      <div class="faq-a">No. Adults learn differently than kids — not slower. I've taught students in their 30s, 40s, 50s, and 60s who went from zero to playing songs they love within months. Age is not the barrier. The right method is.</div>
     </details>
 
     <details class="faq-item">
-      <summary class="faq-q">How much time do I need to practice each week?</summary>
-      <div class="faq-a">15 minutes a day is enough to make real progress — as long as those 15 minutes are targeted. That's exactly what the written lesson summary is for: you always know what to work on, so there's no wasted time. Consistency matters far more than long sessions.</div>
+      <summary class="faq-q">I tried before and gave up. What's different here?</summary>
+      <div class="faq-a">Most people quit because they had no clear structure — YouTube videos, apps that feel like games, or drills disconnected from real music. I start by finding exactly where you are and what you want to play, then build from there. You'll feel progress from lesson one.</div>
     </details>
 
     <details class="faq-item">
-      <summary class="faq-q">I tried before and gave up. What makes this different?</summary>
-      <div class="faq-a">Most people quit because they were learning without a clear structure — random YouTube videos, apps that feel like games, or teachers who gave exercises disconnected from music they care about. I start by understanding exactly where you are and what you want to play, then build a path from there. You'll feel progress from the first lesson.</div>
+      <summary class="faq-q">Do online lessons actually work?</summary>
+      <div class="faq-a">Yes. Every student I've taught online has progressed. You learn in your own space, with your own guitar. Screen sharing lets me see your technique up close and annotate TABs in real time. All you need is a stable connection and a decent camera angle — I'll help you set it up.</div>
     </details>
 
     <details class="faq-item">
-      <summary class="faq-q">Can online lessons really work as well as in-person?</summary>
-      <div class="faq-a">That was my biggest doubt too — before I started teaching this way. The honest answer: for most people, online lessons work just as well, and in some ways better. You learn in your own space, with your own guitar, in a comfortable environment with no travel time lost. Screen sharing lets me see your fretting hand up close and annotate TABs in real time. Every student I've taught online has progressed. The key is a stable internet connection and a decent webcam angle — I'll help you set it up in the first session.</div>
-    </details>
-
-    <details class="faq-item">
-      <summary class="faq-q">What style of music do you teach?</summary>
-      <div class="faq-a">Whatever you want to play. Rock, pop, blues, folk, fingerpicking, Latin — I adapt the curriculum to your taste. Students have played everything from Foo Fighters to Blackbird to Autumn Leaves. You bring the songs. I'll make them work for your level.</div>
-    </details>
-
-    <details class="faq-item">
-      <summary class="faq-q">How does the free trial lesson work?</summary>
-      <div class="faq-a">You book a 30-minute slot, we meet on Google Meet, and I do a quick placement to understand your current level and goals. You'll leave with a real song to work on and a clear sense of where lessons would take you. There's no pressure and no obligation to continue — but most students book their first paid cycle on the same call.</div>
-    </details>
-
-    <details class="faq-item">
-      <summary class="faq-q">How are lessons structured and how much do they cost?</summary>
-      <div class="faq-a">Lessons are 1-on-1 on Google Meet, 60 minutes each. I teach in 5-week cycles so you have a consistent rhythm and enough time to see meaningful progress between check-ins. After each lesson you get a written summary with your practice plan for the week. Pricing is shared after the trial — it's significantly less than local in-person lessons.</div>
-    </details>
-
-    <details class="faq-item">
-      <summary class="faq-q">Do I need to read sheet music?</summary>
-      <div class="faq-a">No. We work with guitar TAB, which is much quicker to learn and more than enough to play any song you want. If you're interested in reading standard notation later, we can cover it — but it's never a requirement.</div>
+      <summary class="faq-q">How does the free trial work?</summary>
+      <div class="faq-a">30 minutes on Google Meet. I do a quick placement, we pick a song you want to play, and you leave with something real to practice. No pressure, no obligation — but most students book their first paid cycle on the same call.</div>
     </details>
   </div>
 </section>
