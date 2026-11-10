@@ -31,8 +31,8 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 
   :root {
     --bg:        #FFFFFF;
-    --bg-soft:   #FAFAFA;   /* near-white, not blue */
-    --bg-deep:   #F3F3F0;   /* very light warm grey for cards */
+    --bg-soft:   #E8DDD0;   /* warm tan — clearly visible against white */
+    --bg-deep:   #D9CCBC;   /* deeper tan for cards */
     --text:      #0B1220;   /* Midnight */
     --text-mid:  #3A4A5A;
     --text-muted:#6B7A8D;   /* neutral grey, not blue */
@@ -517,7 +517,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   .arr-detail { font-size: 12px; color: var(--text-muted); }
 
   /* ── SUMMARY ── */
-  .summary-section { background: var(--bg); padding: 5rem 2.5rem; }
+  .summary-section { background: var(--bg-soft); padding: 5rem 2.5rem; }
   .summary-inner {
     max-width: 1100px; margin: 0 auto;
     display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
@@ -552,7 +552,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   }
 
   /* ── FAQ ── */
-  .faq-section { padding: 5rem 2.5rem; background: var(--bg); }
+  .faq-section { padding: 5rem 2.5rem; background: var(--bg-soft); }
   .faq-inner { max-width: 720px; margin: 0 auto; }
   .faq-item { border-bottom: 1px solid var(--border); }
   .faq-item:first-child { border-top: 1px solid var(--border); }
@@ -617,7 +617,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 
   /* ── BOOKING ── */
   .booking-section {
-    background: var(--bg);
+    background: var(--bg-soft);
     padding: 6rem 2.5rem;
     text-align: center;
     position: relative; overflow: hidden;
@@ -634,7 +634,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     font-weight: 600; line-height: 1.2;
     margin-bottom: 1rem; color: #fff;
   }
-  .booking-title em { font-style: italic; font-weight: 400; color: rgba(255,255,255,0.75); }
+  .booking-title em { font-style: italic; font-weight: 400; color: var(--accent-dk); }
   .booking-sub {
     font-size: 16px; color: rgba(255,255,255,0.8);
     max-width: 460px; margin: 0 auto 2.25rem; line-height: 1.7;
