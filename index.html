@@ -24,66 +24,67 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
     /* Core palette — warm light, built for learning */
-    --bg:        #F5EEE3;   /* warmed-down cream — easier on eyes at night */
-    --bg-soft:   #EDE4D4;   /* parchment — alternate sections */
-    --bg-deep:   #E3D8C6;   /* deeper warm — cards, panels */
-    --text:      #1E1A14;   /* near-black, warm undertone */
-    --text-mid:  #5A5042;   /* mid-tone body copy */
-    --text-muted:#8C7E6E;   /* captions, labels */
-    --accent:    #C4622D;   /* Burnt Sienna — CTAs (kept from brand) */
-    --accent-dk: #A34E22;   /* hover state */
-    --teal:      #2A7C6F;   /* trust / progress signal */
-    --teal-lt:   #DAF0EC;   /* teal tint background */
+    --bg:        #FDFAF6;   /* warm white — not cold */
+    --bg-soft:   #F5EFE6;   /* warm sand — replaces blue Fog */
+    --bg-deep:   #EDE4D6;   /* deeper sand — cards, panels */
+    --text:      #0F1B2D;   /* Midnight */
+    --text-mid:  #3A4D63;   /* mid-tone body copy */
+    --text-muted:#5A6E82;   /* muted slate — captions, labels */
+    --accent:    #E8A33D;   /* Amber — CTAs */
+    --accent-dk: #9A5F0E;   /* Deep Amber — hover / text on light */
+    --teal:      #4A6A8C;   /* Dusk Blue — trust / progress signal */
+    --teal-lt:   #FDF3E3;   /* amber tint background — replaces blue tint */
     --warm:      #C8A96A;   /* warm gold — highlights */
-    --border:    #D5C9B5;   /* subtle dividers */
+    --border:    #E0D5C5;   /* warm dividers */
 
-    --serif: 'Lora', Georgia, serif;
+    --serif: 'Bricolage Grotesque', system-ui, sans-serif;
     --sans:  'Inter', system-ui, sans-serif;
   }
 
   /* ── AUTO DARK MODE (respects OS/browser setting) ── */
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg:        #1C1814;   /* warm dark — aged paper in low light */
-      --bg-soft:   #242018;   /* slightly lighter warm dark */
-      --bg-deep:   #2E2920;   /* cards, panels */
-      --text:      #F0EAE0;   /* warm off-white text */
-      --text-mid:  #C4B9A8;   /* mid body copy */
-      --text-muted:#8A7E6E;   /* captions */
-      --accent:    #D4703A;   /* Burnt Sienna — slightly brighter on dark */
-      --accent-dk: #C4622D;   /* hover */
-      --teal:      #3A9E8F;   /* brighter teal for dark bg contrast */
-      --teal-lt:   #162420;   /* teal tint on dark */
+      --bg:        #0F1B2D;   /* Midnight */
+      --bg-soft:   #172336;
+      --bg-deep:   #1E2E42;
+      --text:      #EEF1F4;   /* Fog */
+      --text-mid:  #B8C8D8;
+      --text-muted:#7A9ABE;
+      --accent:    #E8A33D;   /* Amber */
+      --accent-dk: #F0B84D;
+      --teal:      #7AAACE;
+      --teal-lt:   #131F2E;
       --warm:      #C8A96A;
-      --border:    #3A332A;   /* dark mode dividers */
+      --border:    #3A332A;
     }
 
     /* nav adjustments for dark */
     .nav {
-      background: rgba(28, 24, 20, 0.95);
+      background: rgba(10, 20, 35, 0.95);
       border-bottom-color: var(--border);
     }
 
     /* hero photo badge on dark */
     .hero-photo-badge {
-      background: rgba(28, 24, 20, 0.92);
+      background: rgba(10, 20, 35, 0.92);
     }
 
-    /* booking section stays teal but slightly adjusted */
-    .booking-section {
-      background: #1E3D38;
-    }
+    .nav-logo { color: var(--text) !important; }
+    .booking-section { background: #0F1B2D; }
+    .booking-section .booking-title { color: #EEF1F4 !important; }
+    .booking-section .booking-sub { color: rgba(238,241,244,0.75) !important; }
+    .booking-section .booking-note { color: rgba(238,241,244,0.5) !important; }
 
     /* footer stays dark, just deeper */
     footer {
-      background: #0E0C09;
+      background: #070F1A;
     }
 
     /* curriculum cells */
@@ -156,7 +157,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   .nav {
     position: sticky;
     top: 0;
-    background: rgba(253,250,245,0.95);
+    background: var(--bg);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--border);
     padding: 1rem 2.5rem;
@@ -168,10 +169,10 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   .nav-logo {
     font-family: var(--serif);
     font-size: 1.15rem;
-    color: var(--text);
+    color: var(--text) !important;
     font-weight: 600;
   }
-  .nav-logo em { font-style: italic; color: var(--accent); font-weight: 400; }
+  .nav-logo em { font-style: italic; color: var(--accent) !important; font-weight: 400; }
   .nav-cta {
     font-size: 13px; font-weight: 600; letter-spacing: 0.02em;
     color: var(--accent); text-decoration: none;
@@ -235,13 +236,13 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     gap: 12px;
     border: 1px solid rgba(255,255,255,0.1);
   }
-  .badge-stars { color: #E8A020; font-size: 13px; letter-spacing: 1px; }
+  .badge-stars { color: var(--accent); font-size: 13px; letter-spacing: 1px; }
   .badge-text { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.4; }
   .badge-text strong { color: #fff; font-weight: 600; display: block; }
 
   .eyebrow {
     font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--teal);
+    text-transform: uppercase; color: var(--accent-dk);
     margin-bottom: 1rem;
     display: flex; align-items: center; gap: 8px;
   }
@@ -249,7 +250,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     content: '';
     display: inline-block;
     width: 20px; height: 2px;
-    background: var(--teal);
+    background: var(--accent);
     border-radius: 2px;
   }
 
@@ -280,7 +281,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     color: var(--text-muted);
   }
   .hero-nudge a {
-    color: var(--teal);
+    color: var(--accent-dk);
     text-decoration: none;
     font-weight: 500;
   }
@@ -288,7 +289,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 
   /* ── TRUST BAR ── */
   .trust-bar {
-    background: var(--teal);
+    background: var(--accent);
     padding: 1rem 2.5rem;
     display: flex;
     justify-content: center;
@@ -331,7 +332,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   /* ── SECTION BASICS ── */
   .section-label {
     font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem;
+    text-transform: uppercase; color: var(--accent-dk); margin-bottom: 0.75rem;
   }
   .section-title {
     font-family: var(--serif);
@@ -349,7 +350,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   /* ── INLINE QUOTE ── */
   .inline-quote {
     background: var(--teal-lt);
-    border-left: 4px solid var(--teal);
+    border-left: 4px solid var(--accent);
     padding: 2.5rem 3rem;
     max-width: 820px;
     margin: 0 auto;
@@ -364,7 +365,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   }
   .inline-quote cite {
     font-size: 12px; font-style: normal; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal);
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-dk);
   }
 
   /* ── REFRAME ── */
@@ -389,11 +390,11 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     margin-bottom: 0.75rem;
   }
   .myth-row.positive {
-    border-color: var(--teal);
+    border-color: var(--accent);
     background: var(--teal-lt);
   }
   .myth-cross { font-size: 15px; color: var(--text-muted); flex-shrink: 0; margin-top: 2px; }
-  .myth-check { font-size: 15px; color: var(--teal); flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .myth-check { font-size: 15px; color: var(--accent-dk); flex-shrink: 0; margin-top: 2px; font-weight: 700; }
   .myth-text { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
   .myth-text strong { color: var(--text); font-weight: 600; display: block; margin-bottom: 3px; }
 
@@ -428,9 +429,9 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   }
   .feature-pill + .feature-pill { margin-top: 0.6rem; }
   .feature-pill:hover {
-    border-color: var(--teal);
+    border-color: var(--accent);
     background: var(--teal-lt);
-    box-shadow: 0 2px 12px rgba(42,124,111,0.08);
+    box-shadow: 0 2px 12px rgba(232,163,61,0.12);
   }
   a.feature-pill .fp-title { color: var(--text); }
   .fp-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
@@ -462,9 +463,10 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     transition: background 0.2s;
   }
   .curriculum-cell:hover { background: var(--teal-lt); }
+  /* Level 9: no special span on desktop (fits 3×3 grid perfectly) */
   .cell-level {
     font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--teal); margin-bottom: 5px;
+    text-transform: uppercase; color: var(--accent-dk); margin-bottom: 5px;
   }
   .cell-name {
     font-family: var(--serif); font-size: 0.95rem;
@@ -480,13 +482,13 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 
   .mastery-note {
     margin-top: 1.25rem;
-    border: 1px solid var(--teal);
+    border: 1px solid rgba(232,163,61,0.4);
     background: var(--teal-lt);
     border-radius: 10px; padding: 1rem 1.25rem;
     display: flex; align-items: center; gap: 12px;
     font-size: 13px; color: var(--text-mid);
   }
-  .mastery-note strong { color: var(--teal); }
+  .mastery-note strong { color: var(--accent-dk); }
 
   /* ── ARRANGEMENTS ── */
   .arrangements-section { padding: 5rem 2.5rem; }
@@ -500,16 +502,16 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     padding: 1.1rem 1.35rem; background: var(--bg);
     position: relative; overflow: hidden; transition: border-color 0.2s;
   }
-  .arr-card:hover { border-color: var(--teal); }
+  .arr-card:hover { border-color: var(--accent); }
   .arr-card::before {
     content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-    width: 3px; background: var(--teal); opacity: 0.5;
+    width: 3px; background: var(--warm); opacity: 0.6;
   }
   .arr-card.highlight { border-color: var(--accent); background: rgba(196,98,45,0.03); }
   .arr-card.highlight::before { background: var(--accent); opacity: 0.7; }
   .arr-level-tag {
     font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--teal); margin-bottom: 5px;
+    text-transform: uppercase; color: var(--accent-dk); margin-bottom: 5px;
   }
   .arr-card.highlight .arr-level-tag { color: var(--accent); }
   .arr-song { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
@@ -536,7 +538,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   .mockup-body { padding: 1.5rem; }
   .mockup-label {
     font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
-    text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem;
+    text-transform: uppercase; color: var(--accent-dk); margin-bottom: 0.5rem;
   }
   .mockup-line { height: 8px; border-radius: 4px; background: var(--bg-deep); margin-bottom: 7px; }
   .mockup-line.short { width: 60%; }
@@ -545,8 +547,8 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   .mockup-divider { height: 1px; background: var(--border); margin: 1rem 0; }
   .mockup-chip {
     display: inline-flex; align-items: center; gap: 5px;
-    border: 1px solid var(--teal); border-radius: 20px;
-    padding: 4px 10px; font-size: 11px; color: var(--teal);
+    border: 1px solid rgba(232,163,61,0.4); border-radius: 20px;
+    padding: 4px 10px; font-size: 11px; color: var(--accent-dk);
     margin-right: 5px; margin-bottom: 5px; background: var(--teal-lt);
   }
 
@@ -566,10 +568,10 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   .faq-q::-webkit-details-marker { display: none; }
   .faq-q::after {
     content: '+'; font-size: 20px; font-weight: 300;
-    color: var(--teal); flex-shrink: 0; transition: transform 0.2s;
+    color: var(--accent); flex-shrink: 0; transition: transform 0.2s;
   }
   details[open] .faq-q::after { transform: rotate(45deg); }
-  details[open] .faq-q { color: var(--teal); }
+  details[open] .faq-q { color: var(--accent-dk); }
   .faq-a {
     font-size: 14px; color: var(--text-mid); line-height: 1.8;
     padding-bottom: 1.25rem; max-width: 640px;
@@ -580,7 +582,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     to   { opacity: 1; transform: translateY(0); }
   }
   .faq-item { transition: background 0.2s; border-radius: 4px; }
-  details[open].faq-item { background: rgba(42,124,111,0.04); }
+  details[open].faq-item { background: rgba(232,163,61,0.05); }
 
   /* ── REVIEWS ── */
   .reviews-section { padding: 5rem 2.5rem 7rem; }
@@ -597,9 +599,9 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     padding: 1.6rem; background: var(--bg);
     transition: border-color 0.2s, box-shadow 0.2s;
   }
-  .review-card:hover { border-color: var(--teal); box-shadow: 0 8px 28px rgba(42,124,111,0.13); transform: translateY(-4px) scale(1.01); }
+  .review-card:hover { border-color: var(--accent); box-shadow: 0 8px 28px rgba(232,163,61,0.15); transform: translateY(-4px) scale(1.01); }
   .review-stars { display: flex; gap: 3px; margin-bottom: 0.9rem; }
-  .star { color: #E8A020; font-size: 14px; }
+  .star { color: var(--accent); font-size: 14px; }
   .review-text {
     font-size: 14px; color: var(--text-mid); line-height: 1.75;
     margin-bottom: 1.1rem;
@@ -607,7 +609,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   .reviewer { display: flex; align-items: center; gap: 10px; }
   .reviewer-avatar {
     width: 34px; height: 34px; border-radius: 50%;
-    background: var(--teal); display: flex; align-items: center;
+    background: var(--accent); display: flex; align-items: center;
     justify-content: center; font-size: 13px; font-weight: 700;
     color: #fff; flex-shrink: 0;
   }
@@ -616,7 +618,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 
   /* ── BOOKING ── */
   .booking-section {
-    background: var(--teal);
+    background: var(--bg-soft);
     padding: 6rem 2.5rem;
     text-align: center;
     position: relative; overflow: hidden;
@@ -640,7 +642,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   }
   .btn-booking {
     display: inline-flex; align-items: center; gap: 8px;
-    background: var(--accent); color: #fff;
+    background: var(--accent); color: var(--text);
     font-family: var(--sans); font-size: 16px; font-weight: 700;
     padding: 16px 36px; border-radius: 8px;
     text-decoration: none;
@@ -653,11 +655,11 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 
   /* ── FOOTER ── */
   footer {
-    background: var(--text);
+    background: #0F1B2D;
     padding: 1.75rem 2.5rem;
     display: flex; justify-content: space-between; align-items: center;
   }
-  .footer-logo { font-family: var(--serif); font-size: 1rem; color: rgba(255,255,255,0.6); font-weight: 600; }
+  .footer-logo { font-family: var(--serif); font-size: 1rem; color: #EEF1F4; font-weight: 600; }
   .footer-logo em { font-style: italic; color: var(--accent); font-weight: 400; }
   .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
   .instagram-link {
@@ -721,6 +723,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     .arrangements-section, .summary-section, .reviews-section, .faq-section { padding: 3rem 1.25rem; }
     .curriculum-section { padding: 3rem 1.25rem; }
     .curriculum-grid { grid-template-columns: 1fr 1fr; }
+    .curriculum-cell--last { grid-column: 1 / -1; } /* Level 9 spans both cols — no orphan gap */
     .reviews-grid { grid-template-columns: 1fr; }
     .student-cards-row { grid-template-columns: 1fr; }
     .nav { padding: 0.9rem 1.25rem; }
@@ -736,6 +739,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 
   @media (max-width: 560px) {
     .curriculum-grid { grid-template-columns: 1fr; }
+    .curriculum-cell--last { grid-column: 1; } /* back to single col on small phones */
     /* Trust bar — single column on small phones */
     .trust-bar { grid-template-columns: 1fr; gap: 0.4rem; }
     .hero-title { font-size: 1.85rem; }
@@ -762,16 +766,16 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
     font-size: 14px; font-weight: 500; letter-spacing: 0.01em;
     white-space: nowrap; color: var(--text);
   }
-  #sticky-bar .sticky-label strong { color: #C4622D; }
+  #sticky-bar .sticky-label strong { color: var(--accent); }
   #sticky-bar .sticky-btn {
-    background: #C4622D; color: #fff;
+    background: var(--accent); color: var(--text);
     border: none; border-radius: 6px;
     padding: 0.55rem 1.25rem;
     font-size: 14px; font-weight: 600; cursor: pointer;
     text-decoration: none; white-space: nowrap;
     transition: background 0.2s, transform 0.15s;
   }
-  #sticky-bar .sticky-btn:hover { background: #a84f26; transform: translateY(-1px); }
+  #sticky-bar .sticky-btn:hover { background: var(--accent-dk); color: #fff; transform: translateY(-1px); }
   #sticky-bar .sticky-close {
     background: none; border: none; color: rgba(0,0,0,0.35);
     font-size: 18px; cursor: pointer; line-height: 1; padding: 0 0 0 0.5rem;
@@ -982,7 +986,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
         <div class="cell-songs-label">Recommended songs</div>
         <div class="cell-songs">Stairway to Heaven (solo), Pride and Joy</div>
       </div>
-      <div class="curriculum-cell">
+      <div class="curriculum-cell curriculum-cell--last">
         <div class="cell-level">Level 9</div>
         <div class="cell-name">Rhythm & Genre Expansion</div>
         <div class="cell-desc">7th chords, extended chords, funk 16ths, odd time signatures, hybrid picking.</div>
@@ -1118,98 +1122,6 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 
 <div class="divider"></div>
 
-<!-- PROGRESS TIMELINE -->
-<section style="padding:5rem 2.5rem; background:var(--bg-soft);">
-  <div style="max-width:1100px; margin:0 auto; text-align:center;">
-    <div class="section-label">What progress actually looks like</div>
-    <h2 class="section-title" style="margin-bottom:3rem;">From zero to <em>playing songs you love.</em></h2>
-
-    <!-- Timeline: 4 steps with rising visual -->
-    <style>
-      .tl-wrap { position:relative; display:flex; justify-content:space-between; align-items:flex-end; max-width:900px; margin:0 auto; padding:0 1rem; }
-      .tl-step { display:flex; flex-direction:column; align-items:center; gap:0.75rem; flex:1; position:relative; z-index:1; }
-      .tl-step-label { font-family:Inter,system-ui,sans-serif; font-size:15px; font-weight:700; color:var(--text); }
-      .tl-step-sub { font-family:Georgia,serif; font-size:13px; font-style:italic; color:var(--text-mid); }
-      .tl-line { position:absolute; bottom:120px; left:8%; right:8%; height:2px; background:repeating-linear-gradient(90deg,#2A7C6F 0,#2A7C6F 7px,transparent 7px,transparent 12px); transform:rotate(-4deg); transform-origin:left center; pointer-events:none; }
-      @media (max-width: 700px) {
-        .tl-wrap { flex-direction:column; align-items:center; gap:2rem; padding:0; }
-        .tl-step { flex-direction:row; align-items:center; gap:1.25rem; padding-bottom:0 !important; width:100%; max-width:320px; text-align:left; }
-        .tl-step svg { flex-shrink:0; }
-        .tl-line { display:none; }
-        .tl-step-labels { display:flex; flex-direction:column; gap:0.2rem; }
-      }
-    </style>
-    <div class="tl-wrap">
-      <div class="tl-line"></div>
-
-      <!-- STEP 1 — lowest, left -->
-      <div class="tl-step" style="padding-bottom:0px;">
-        <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- chord diagram -->
-          <rect x="14" y="8" width="44" height="44" rx="4" stroke="#C4622D" stroke-width="2.5"/>
-          <line x1="14" y1="22" x2="58" y2="22" stroke="#C4622D" stroke-width="1.5"/>
-          <line x1="14" y1="36" x2="58" y2="36" stroke="#C4622D" stroke-width="1.5"/>
-          <line x1="28.6" y1="8" x2="28.6" y2="52" stroke="#C4622D" stroke-width="1.5"/>
-          <line x1="43.3" y1="8" x2="43.3" y2="52" stroke="#C4622D" stroke-width="1.5"/>
-          <circle cx="28.6" cy="29" r="6" fill="#C4622D"/>
-          <circle cx="43.3" cy="15" r="6" fill="#C4622D"/>
-          <text x="14" y="6" text-anchor="middle" font-size="9" fill="#C4622D" font-family="sans-serif">×</text>
-          <text x="28.6" y="6" text-anchor="middle" font-size="9" fill="#C4622D" font-family="sans-serif">○</text>
-          <text x="43.3" y="6" text-anchor="middle" font-size="9" fill="#C4622D" font-family="sans-serif">○</text>
-          <!-- step number -->
-          <text x="36" y="67" text-anchor="middle" font-size="11" font-weight="500" fill="#8C7E6E" font-family="Inter,sans-serif" letter-spacing="0.06em">01</text>
-        </svg>
-        <div class="tl-step-labels"><div class="tl-step-label">Week 1</div><div class="tl-step-sub">Your first real chord</div></div>
-      </div>
-
-      <!-- STEP 2 — a bit higher -->
-      <div class="tl-step" style="padding-bottom:30px;">
-        <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- two eighth notes beamed -->
-          <ellipse cx="20" cy="54" rx="10" ry="7" fill="#C4622D" transform="rotate(-18,20,54)"/>
-          <ellipse cx="50" cy="46" rx="10" ry="7" fill="#C4622D" transform="rotate(-18,50,46)"/>
-          <line x1="29" y1="51" x2="29" y2="18" stroke="#C4622D" stroke-width="3"/>
-          <line x1="59" y1="43" x2="59" y2="10" stroke="#C4622D" stroke-width="3"/>
-          <line x1="29" y1="18" x2="59" y2="10" stroke="#C4622D" stroke-width="3"/>
-          <text x="36" y="67" text-anchor="middle" font-size="11" font-weight="500" fill="#8C7E6E" font-family="Inter,sans-serif" letter-spacing="0.06em">02</text>
-        </svg>
-        <div class="tl-step-labels"><div class="tl-step-label">Week 4</div><div class="tl-step-sub">First full song</div></div>
-      </div>
-
-      <!-- STEP 3 — higher -->
-      <div class="tl-step" style="padding-bottom:60px;">
-        <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- headphones -->
-          <path d="M 12 38 C 12 18 60 18 60 38" stroke="#C4622D" stroke-width="5" stroke-linecap="round" fill="none"/>
-          <rect x="6" y="35" width="14" height="22" rx="6" fill="#C4622D"/>
-          <rect x="52" y="35" width="14" height="22" rx="6" fill="#C4622D"/>
-          <text x="36" y="67" text-anchor="middle" font-size="11" font-weight="500" fill="#8C7E6E" font-family="Inter,sans-serif" letter-spacing="0.06em">03</text>
-        </svg>
-        <div class="tl-step-labels"><div class="tl-step-label">Month 3</div><div class="tl-step-sub">Playing songs you love</div></div>
-      </div>
-
-      <!-- STEP 4 — highest, right -->
-      <div class="tl-step" style="padding-bottom:90px;">
-        <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <!-- guitar body: classic figure-8 using a path -->
-          <path d="M36 58 C26 58 20 52 20 46 C20 42 22 39 25 37 C22 35 20 32 20 28 C20 22 26 17 33 17 C34.5 17 36 17.3 37 17.8 L37 12 L35 12 L35 8 L37 8 L37 6 L39 6 L39 8 L41 8 L41 12 L39 12 L39 17.8 C40 17.3 41.5 17 43 17 C50 17 56 22 56 28 C56 32 54 35 51 37 C54 39 56 42 56 46 C56 52 50 58 36 58 Z" fill="#C4622D"/>
-          <!-- waist indents -->
-          <path d="M24 37 C28 35 30 33 30 30 C30 33 32 35 36 37 C40 35 42 33 42 30 C42 33 44 35 48 37" stroke="rgba(0,0,0,0.15)" stroke-width="1" fill="none"/>
-          <!-- sound hole -->
-          <circle cx="36" cy="40" r="6" fill="rgba(0,0,0,0.22)"/>
-          <!-- strings suggestion -->
-          <line x1="36" y1="34" x2="36" y2="56" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-          <text x="36" y="67" text-anchor="middle" font-size="11" font-weight="500" fill="#8C7E6E" font-family="Inter,sans-serif" letter-spacing="0.06em">04</text>
-        </svg>
-        <div class="tl-step-labels"><div class="tl-step-label">Month 6+</div><div class="tl-step-sub">You actually play guitar now</div></div>
-      </div>
-
-    </div><!-- end timeline flex -->
-  </div>
-</section>
-
-<div class="divider"></div>
-
 <!-- QUIZ -->
 <section style="padding:5rem 2.5rem; background:var(--bg);">
   <div style="max-width:680px; margin:0 auto; text-align:center;">
@@ -1236,14 +1148,14 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
       </div>
 
       <!-- Result card (hidden until done) -->
-      <div id="quiz-result" style="display:none; background:var(--bg-soft); border:2px solid var(--teal); border-radius:16px; padding:2.5rem 2rem; text-align:center;">
+      <div id="quiz-result" style="display:none; background:var(--bg-soft); border:2px solid var(--accent); border-radius:16px; padding:2.5rem 2rem; text-align:center;">
         <div id="result-label" style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); font-family:var(--sans); font-weight:600; margin-bottom:0.75rem;"></div>
         <h3 id="result-title" style="font-family:var(--serif); font-size:1.6rem; font-weight:600; color:var(--text); margin-bottom:1rem;"></h3>
         <p id="result-body" style="font-size:15px; color:var(--text-mid); line-height:1.75; margin-bottom:1.75rem;"></p>
         <a href="https://calendar.app.google/8o8ckbia8TZ4Js6N8" target="_blank" class="btn-primary" onclick="fbq('track','Schedule');" style="display:inline-flex;">
           Book your free trial — let's confirm this together <span class="btn-arrow">→</span>
         </a>
-        <p style="margin-top:1rem; font-size:12px; color:var(--text-muted); font-family:var(--sans);">Or <button onclick="resetQuiz()" style="background:none;border:none;color:var(--teal);cursor:pointer;font-size:12px;font-family:var(--sans);text-decoration:underline;">retake the quiz</button></p>
+        <p style="margin-top:1rem; font-size:12px; color:var(--text-muted); font-family:var(--sans);">Or <button onclick="resetQuiz()" style="background:none;border:none;color:var(--accent-dk);cursor:pointer;font-size:12px;font-family:var(--sans);text-decoration:underline;">retake the quiz</button></p>
       </div>
     </div>
   </div>
@@ -1318,7 +1230,7 @@ function renderQuestion() {
       border-radius:10px; font-family:var(--sans); font-size:15px;
       color:var(--text); cursor:pointer; transition:all 0.15s;
     `;
-    btn.onmouseover = () => { btn.style.borderColor = 'var(--teal)'; btn.style.background = 'var(--teal-lt)'; };
+    btn.onmouseover = () => { btn.style.borderColor = 'var(--accent)'; btn.style.background = 'var(--teal-lt)'; };
     btn.onmouseout = () => { btn.style.borderColor = 'var(--border)'; btn.style.background = 'var(--bg)'; };
     btn.onclick = () => selectOption(i, btn);
     opts.appendChild(btn);
@@ -1393,17 +1305,17 @@ document.addEventListener('DOMContentLoaded', renderQuestion);
     <div class="review-card">
       <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
       <p class="review-text">I've been studying with Nicolas for over 12 months. He's always patient and creative — each lesson is informative and insightful. After every session, I leave with new knowledge and increased confidence in my playing.</p>
-      <div class="reviewer"><div class="reviewer-avatar" style="background:#5a7a8a">R</div><div><div class="reviewer-name">Ross</div><div class="reviewer-sub">12 months of lessons</div></div></div>
+      <div class="reviewer"><div class="reviewer-avatar" style="background:#4A6A8C">R</div><div><div class="reviewer-name">Ross</div><div class="reviewer-sub">12 months of lessons</div></div></div>
     </div>
     <div class="review-card">
       <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
       <p class="review-text">Nico taught me electric guitar for most of 2023. He'd let me lead with any song I liked — Sweet Child O' Mine, Foo Fighters — then break it down so I could actually play it. His passion for guitar is contagious.</p>
-      <div class="reviewer"><div class="reviewer-avatar" style="background:#4a7a6a">R</div><div><div class="reviewer-name">Ray</div><div class="reviewer-sub">Electric guitar, 2023</div></div></div>
+      <div class="reviewer"><div class="reviewer-avatar" style="background:#2D5070">R</div><div><div class="reviewer-name">Ray</div><div class="reviewer-sub">Electric guitar, 2023</div></div></div>
     </div>
     <div class="review-card">
       <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
       <p class="review-text">My experience with Nico was extremely positive. He makes complex things easy to understand, is very dynamic, has a great sense of humor, and knows how to adapt to each student's needs. I only stopped because I moved cities — highly recommended.</p>
-      <div class="reviewer"><div class="reviewer-avatar" style="background:#5a6a8a">J</div><div><div class="reviewer-name">Juan</div><div class="reviewer-sub">Guitar student</div></div></div>
+      <div class="reviewer"><div class="reviewer-avatar" style="background:#3D5878">J</div><div><div class="reviewer-name">Juan</div><div class="reviewer-sub">Guitar student</div></div></div>
     </div>
     <div class="review-card">
       <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
@@ -1416,11 +1328,11 @@ document.addEventListener('DOMContentLoaded', renderQuestion);
   <div class="student-cards-row">
     <div class="review-card" style="background:rgba(196,98,45,0.04); border-color:rgba(196,98,45,0.2);">
       <p class="review-text" style="font-style:italic;">"Thank you for teaching me this year! I learnt so many skills that improved my playing — I loved the different songs and new challenges you set me."</p>
-      <div class="reviewer"><div class="reviewer-avatar" style="background:#7a6a9a">A</div><div><div class="reviewer-name">Alvia</div><div class="reviewer-sub">Guitar student</div></div></div>
+      <div class="reviewer"><div class="reviewer-avatar" style="background:#5A7898">A</div><div><div class="reviewer-name">Alvia</div><div class="reviewer-sub">Guitar student</div></div></div>
     </div>
     <div class="review-card" style="background:rgba(196,98,45,0.04); border-color:rgba(196,98,45,0.2);">
       <p class="review-text" style="font-style:italic;">"Your guitar lessons were so much fun — they helped me improve a lot over the course of the year. Thank you!"</p>
-      <div class="reviewer"><div class="reviewer-avatar" style="background:#6a8a7a">K</div><div><div class="reviewer-name">Kara</div><div class="reviewer-sub">Guitar student</div></div></div>
+      <div class="reviewer"><div class="reviewer-avatar" style="background:#3D6880">K</div><div><div class="reviewer-name">Kara</div><div class="reviewer-sub">Guitar student</div></div></div>
     </div>
   </div>
 </section>
@@ -1459,19 +1371,19 @@ document.addEventListener('DOMContentLoaded', renderQuestion);
 
 <!-- BOOKING -->
 <section class="booking-section">
-  <div class="eyebrow" style="justify-content:center; color:rgba(255,255,255,0.7);">Your first step</div>
-  <h2 class="booking-title">30 minutes.<br><em>One free trial lesson.</em></h2>
-  <p class="booking-sub">We'll find exactly where you are, pick a song you want to play, and you'll leave with something real to practice. Free, no obligation, no experience needed.</p>
+  <div class="eyebrow" style="justify-content:center;">Your first step</div>
+  <h2 class="booking-title" style="color:var(--text);">30 minutes.<br><em>One free trial lesson.</em></h2>
+  <p class="booking-sub" style="color:var(--text-mid);">We'll find exactly where you are, pick a song you want to play, and you'll leave with something real to practice. Free, no obligation, no experience needed.</p>
   <div style="display:flex; flex-direction:column; align-items:center; gap:1.5rem; margin-bottom:0;">
-    <div style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:0.8rem 1.4rem; font-size:13px; color:rgba(255,255,255,0.85); line-height:1.6; max-width:500px; text-align:center;">
-      I keep my roster to a maximum of <strong style="color:#fff;">7 students at a time</strong> — so every person gets the attention their progress deserves.<br>
-      <span style="color:rgba(255,255,255,0.65);">Currently <strong style="color:#fff;">3 spots open.</strong> When they fill, the waitlist can take months.</span>
+    <div style="background:rgba(74,106,140,0.08); border:1px solid rgba(74,106,140,0.2); border-radius:8px; padding:0.8rem 1.4rem; font-size:13px; color:var(--text-mid); line-height:1.6; max-width:500px; text-align:center;">
+      I keep my roster to a maximum of <strong style="color:var(--text);">7 students at a time</strong> — so every person gets the attention their progress deserves.<br>
+      <span style="color:var(--text-mid);">Currently <strong style="color:var(--accent-dk);">3 spots open.</strong> When they fill, the waitlist can take months.</span>
     </div>
     <a href="https://calendar.app.google/8o8ckbia8TZ4Js6N8" target="_blank" class="btn-booking" onclick="fbq('track','Schedule');">
       Claim your free trial lesson <span class="btn-arrow">→</span>
     </a>
   </div>
-  <p class="booking-note">After booking you'll receive confirmation with Google Meet details. Questions? <a href="mailto:nico.leonlope@gmail.com">nico.leonlope@gmail.com</a></p>
+  <p class="booking-note" style="color:var(--text-muted);">After booking you'll receive confirmation with Google Meet details. Questions? <a href="mailto:nico.leonlope@gmail.com" style="color:var(--text-mid);">nico.leonlope@gmail.com</a></p>
 </section>
 
 <!-- FOOTER -->
