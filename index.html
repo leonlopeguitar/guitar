@@ -30,19 +30,18 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    /* Core palette — warm light, built for learning */
-    --bg:        #FDFAF6;   /* warm white — not cold */
-    --bg-soft:   #F5EFE6;   /* warm sand — replaces blue Fog */
-    --bg-deep:   #EDE4D6;   /* deeper sand — cards, panels */
-    --text:      #0F1B2D;   /* Midnight */
-    --text-mid:  #3A4D63;   /* mid-tone body copy */
-    --text-muted:#5A6E82;   /* muted slate — captions, labels */
-    --accent:    #E8A33D;   /* Amber — CTAs */
-    --accent-dk: #9A5F0E;   /* Deep Amber — hover / text on light */
-    --teal:      #4A6A8C;   /* Dusk Blue — trust / progress signal */
-    --teal-lt:   #FDF3E3;   /* amber tint background — replaces blue tint */
-    --warm:      #C8A96A;   /* warm gold — highlights */
-    --border:    #E0D5C5;   /* warm dividers */
+    --bg:        #FFFFFF;
+    --bg-soft:   #FAFAFA;   /* near-white, not blue */
+    --bg-deep:   #F3F3F0;   /* very light warm grey for cards */
+    --text:      #0B1220;   /* Midnight */
+    --text-mid:  #3A4A5A;
+    --text-muted:#6B7A8D;   /* neutral grey, not blue */
+    --accent:    #E8A33D;   /* Amber */
+    --accent-dk: #9A5F0E;   /* Deep Amber */
+    --teal:      #4A6A8C;   /* Dusk Blue — labels/dividers only */
+    --teal-lt:   #FFF8EE;   /* warm amber tint for hover/highlight */
+    --warm:      #C8A96A;
+    --border:    #E5E5E0;   /* warm neutral border */
 
     --serif: 'Bricolage Grotesque', system-ui, sans-serif;
     --sans:  'Inter', system-ui, sans-serif;
@@ -51,40 +50,40 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   /* ── AUTO DARK MODE (respects OS/browser setting) ── */
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg:        #0F1B2D;   /* Midnight */
-      --bg-soft:   #172336;
-      --bg-deep:   #1E2E42;
-      --text:      #EEF1F4;   /* Fog */
-      --text-mid:  #B8C8D8;
-      --text-muted:#7A9ABE;
+      --bg:        #111111;   /* near-black, not blue */
+      --bg-soft:   #1A1A1A;   /* dark grey, not navy */
+      --bg-deep:   #242424;   /* card backgrounds */
+      --text:      #F0EDE8;   /* warm white */
+      --text-mid:  #B0A898;   /* warm grey */
+      --text-muted:#7A7060;   /* warm muted */
       --accent:    #E8A33D;   /* Amber */
       --accent-dk: #F0B84D;
-      --teal:      #7AAACE;
-      --teal-lt:   #131F2E;
+      --teal:      #9A8060;   /* warm brown-gold, replaces blue */
+      --teal-lt:   #1E1A14;   /* dark warm tint */
       --warm:      #C8A96A;
-      --border:    #3A332A;
+      --border:    #2E2A24;   /* warm dark border */
     }
 
     /* nav adjustments for dark */
     .nav {
-      background: rgba(10, 20, 35, 0.95);
+      background: rgba(17, 17, 17, 0.97);
       border-bottom-color: var(--border);
     }
 
     /* hero photo badge on dark */
     .hero-photo-badge {
-      background: rgba(10, 20, 35, 0.92);
+      background: rgba(17, 17, 17, 0.92);
     }
 
     .nav-logo { color: var(--text) !important; }
-    .booking-section { background: #0F1B2D; }
+    .booking-section { background: #111111; }
     .booking-section .booking-title { color: #EEF1F4 !important; }
     .booking-section .booking-sub { color: rgba(238,241,244,0.75) !important; }
     .booking-section .booking-note { color: rgba(238,241,244,0.5) !important; }
 
     /* footer stays dark, just deeper */
     footer {
-      background: #070F1A;
+      background: #0A0A0A;
     }
 
     /* curriculum cells */
@@ -184,7 +183,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 
   /* ── HERO ── */
   .hero {
-    background: var(--bg-soft);
+    background: var(--bg);
     padding: 5rem 2.5rem 4rem;
     position: relative;
     overflow: hidden;
@@ -400,7 +399,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 
   /* ── CTA BAND ── */
   .cta-band {
-    background: var(--bg-soft);
+    background: var(--bg);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     padding: 2.25rem 2.5rem;
@@ -518,7 +517,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   .arr-detail { font-size: 12px; color: var(--text-muted); }
 
   /* ── SUMMARY ── */
-  .summary-section { background: var(--bg-soft); padding: 5rem 2.5rem; }
+  .summary-section { background: var(--bg); padding: 5rem 2.5rem; }
   .summary-inner {
     max-width: 1100px; margin: 0 auto;
     display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
@@ -553,7 +552,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
   }
 
   /* ── FAQ ── */
-  .faq-section { padding: 5rem 2.5rem; background: var(--bg-soft); }
+  .faq-section { padding: 5rem 2.5rem; background: var(--bg); }
   .faq-inner { max-width: 720px; margin: 0 auto; }
   .faq-item { border-bottom: 1px solid var(--border); }
   .faq-item:first-child { border-top: 1px solid var(--border); }
@@ -618,7 +617,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 
   /* ── BOOKING ── */
   .booking-section {
-    background: var(--bg-soft);
+    background: var(--bg);
     padding: 6rem 2.5rem;
     text-align: center;
     position: relative; overflow: hidden;
@@ -1134,10 +1133,10 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
       <div style="margin-bottom:2rem;">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
           <span id="quiz-progress-label" style="font-size:13px; color:var(--text-muted); font-family:var(--sans);">Question 1 of 5</span>
-          <span id="quiz-pct" style="font-size:13px; color:var(--teal); font-weight:600; font-family:var(--sans);">0%</span>
+          <span id="quiz-pct" style="font-size:13px; color:var(--accent-dk); font-weight:600; font-family:var(--sans);">0%</span>
         </div>
         <div style="height:4px; background:var(--border); border-radius:4px; overflow:hidden;">
-          <div id="quiz-bar" style="height:100%; width:0%; background:var(--teal); border-radius:4px; transition:width 0.4s ease;"></div>
+          <div id="quiz-bar" style="height:100%; width:0%; background:var(--accent); border-radius:4px; transition:width 0.4s ease;"></div>
         </div>
       </div>
 
@@ -1149,7 +1148,7 @@ src="https://www.facebook.com/tr?id=1967147663973445&ev=PageView&noscript=1"
 
       <!-- Result card (hidden until done) -->
       <div id="quiz-result" style="display:none; background:var(--bg-soft); border:2px solid var(--accent); border-radius:16px; padding:2.5rem 2rem; text-align:center;">
-        <div id="result-label" style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); font-family:var(--sans); font-weight:600; margin-bottom:0.75rem;"></div>
+        <div id="result-label" style="font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent-dk); font-family:var(--sans); font-weight:600; margin-bottom:0.75rem;"></div>
         <h3 id="result-title" style="font-family:var(--serif); font-size:1.6rem; font-weight:600; color:var(--text); margin-bottom:1rem;"></h3>
         <p id="result-body" style="font-size:15px; color:var(--text-mid); line-height:1.75; margin-bottom:1.75rem;"></p>
         <a href="https://calendar.app.google/8o8ckbia8TZ4Js6N8" target="_blank" class="btn-primary" onclick="fbq('track','Schedule');" style="display:inline-flex;">
@@ -1305,7 +1304,7 @@ document.addEventListener('DOMContentLoaded', renderQuestion);
     <div class="review-card">
       <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
       <p class="review-text">I've been studying with Nicolas for over 12 months. He's always patient and creative — each lesson is informative and insightful. After every session, I leave with new knowledge and increased confidence in my playing.</p>
-      <div class="reviewer"><div class="reviewer-avatar" style="background:#4A6A8C">R</div><div><div class="reviewer-name">Ross</div><div class="reviewer-sub">12 months of lessons</div></div></div>
+      <div class="reviewer"><div class="reviewer-avatar" style="background:var(--accent)">R</div><div><div class="reviewer-name">Ross</div><div class="reviewer-sub">12 months of lessons</div></div></div>
     </div>
     <div class="review-card">
       <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
